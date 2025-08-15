@@ -5,7 +5,7 @@ import { TestScreen } from "@/components/test-screen";
 import { LoadingScreen } from "@/components/loading-screen";
 import { ResultScreen } from "@/components/result-screen";
 import { questions } from "@/lib/test-data";
-import { calculateScores, getPersonalityType, getResultDescription } from "@/lib/result-calculator";
+import { calculatePersonalityType, getResultDescription } from "@/lib/result-calculator";
 import type { Answer } from "@shared/schema";
 
 type Screen = "welcome" | "test" | "loading" | "result";
