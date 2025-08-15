@@ -12,8 +12,8 @@ export function WelcomeScreen({ onStartTest }: WelcomeScreenProps) {
       <Card className="rounded-2xl shadow-lg mb-8">
         <CardContent className="p-8 md:p-12">
           <img 
-            src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" 
-            alt="귀여운 강아지 일러스트레이션" 
+            src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" 
+            alt="가운데 새끼 강아지 일러스트레이션" 
             className="w-full h-48 md:h-64 object-cover rounded-xl mb-8"
             data-testid="img-hero"
           />
