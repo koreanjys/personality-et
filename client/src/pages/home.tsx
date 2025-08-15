@@ -48,8 +48,7 @@ export default function Home() {
   };
 
   const handleLoadingComplete = () => {
-    const scores = calculateScores(answers);
-    const type = getPersonalityType(scores);
+    const type = calculatePersonalityType(answers);
     const description = getResultDescription(type);
 
     setPersonalityType(type);
