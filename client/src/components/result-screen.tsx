@@ -28,7 +28,7 @@ export function ResultScreen({
               <User className="text-white text-3xl" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4" data-testid="text-result-title">
-              당신의 결과
+              당신의 성향
             </h2>
             
             <div className="bg-gradient-to-r from-primary to-secondary rounded-xl p-6 mb-6">
@@ -72,7 +72,7 @@ export function ResultScreen({
               <div className="inline-flex items-center justify-center w-16 h-16 bg-red-500 rounded-full mb-4">
                 <X className="text-white text-2xl" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-2">주의할 궁합</h3>
+              <h3 className="text-2xl font-bold text-slate-800 mb-2">최악의 궁합</h3>
               <div className="text-xl font-semibold text-red-500 mb-4" data-testid="text-worst-match">
                 {resultDescription.worstMatch}
               </div>
