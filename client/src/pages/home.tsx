@@ -36,38 +36,35 @@ export default function Home() {
     const type = urlParams.get('type');
     
     if (resultId) {
-      // 짧은 ID로 서버에서 결과 로드
-      setIsLoadingSharedResult(true);
-      fetch(`/api/test-results/${resultId}`)
-        .then(response => {
-          if (!response.ok) {
-            if (response.status === 410) {
-              throw new Error('EXPIRED');
-            } else if (response.status === 404) {
-              throw new Error('NOT_FOUND');
-            }
-            throw new Error('결과를 찾을 수 없습니다');
-          }
-          return response.json();
-        })
-        .then(data => {
-          setPersonalityType(data.personalityType);
-          setResultDescription(data.resultDescription);
-          setCurrentScreen("result");
-        })
-        .catch(error => {
-          console.error('서버에서 결과 로드 중 오류:', error);
-          if (error.message === 'EXPIRED') {
-            alert('공유된 결과가 만료되었습니다. (24시간 후 자동 삭제)');
-          } else if (error.message === 'NOT_FOUND') {
-            alert('공유된 결과를 찾을 수 없습니다.');
-          } else {
-            alert('공유된 결과를 불러올 수 없습니다.');
-          }
-        })
-        .finally(() => {
-          setIsLoadingSharedResult(false);
-        });
+      // 결과 ID 형식 확인 (MBTI-character)
+      const match = resultId.match(/^([A-Z]{4})-(eigen|teto)$/);
+      if (match) {
+        const [, personalityType, characterEn] = match;
+        const character = characterEn === 'eigen' ? '에겐' : '테토';
+        
+        // 성향과 캐릭터 정보로 결과 재계산
+        setPersonalityType(personalityType);
+        
+        // 결과 설명 계산
+        const calculatedResult = getResultDescription(personalityType);
+        
+        // 최고 궁합을 지정된 캐릭터로 설정
+        const updatedResult = {
+          ...calculatedResult,
+          bestMatch: character,
+          bestMatchDesc: character === '에겐' ? 
+            '에겐과 완벽한 궁합을 보여줍니다!' : 
+            '테토와 완벽한 궁합을 보여줍니다!'
+        };
+        
+        setResultDescription(updatedResult);
+        setCurrentScreen("result");
+        
+        console.log(`공유된 결과 로드: ${personalityType} - ${character}`);
+      } else {
+        console.error('잘못된 결과 ID 형식:', resultId);
+        alert('잘못된 공유 링크입니다.');
+      }
     } else if (result && type) {
       try {
         // 기존 긴 URL 방식 지원 (하위 호환성)
@@ -135,25 +132,15 @@ export default function Home() {
     const shareText = t('result.shareText', { type: personalityType });
     
     try {
-      // 결과를 서버에 저장
-      const response = await fetch('/api/test-results', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          personalityType,
-          resultDescription,
-          language: t('common.language') === 'Language' ? 'en' : 'ko'
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('결과 저장 실패');
-      }
-
-      const savedResult = await response.json();
-      const shareUrl = `${window.location.origin}${window.location.pathname}?id=${savedResult.id}`;
+      // 최고 궁합 캐릭터 찾기
+      const bestCharacter = resultDescription.bestMatch;
+      
+      // 영문 캐릭터명 변환
+      const characterEn = bestCharacter === '에겐' ? 'eigen' : 'teto';
+      const resultId = `${personalityType}-${characterEn}`;
+      
+      // 고정 URL 생성
+      const shareUrl = `${window.location.origin}${window.location.pathname}?id=${resultId}`;
       
       if (navigator.share) {
         console.log('네이티브 공유 사용');

@@ -3,34 +3,6 @@ import { Hono } from 'hono';
 import { handle } from 'hono/cloudflare-pages';
 import { cors } from 'hono/cors';
 
-// 메모리 스토리지 with 만료 시간 (24시간)
-interface StoredResult {
-  data: any;
-  expiresAt: number;
-}
-
-const storage = new Map<string, StoredResult>();
-
-// UUID 생성 함수 (Cloudflare Workers 호환)
-const generateUUID = (): string => {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
-    const r = Math.random() * 16 | 0;
-    const v = c === 'x' ? r : (r & 0x3 | 0x8);
-    return v.toString(16);
-  });
-};
-
-// 만료된 결과 정리 함수
-const cleanupExpiredResults = () => {
-  const now = Date.now();
-  for (const [key, value] of storage.entries()) {
-    if (now > value.expiresAt) {
-      storage.delete(key);
-      console.log(`만료된 결과 삭제: ${key}`);
-    }
-  }
-};
-
 const app = new Hono();
 
 // CORS 설정
@@ -40,78 +12,81 @@ app.use('*', cors({
   allowHeaders: ['Content-Type', 'Authorization'],
 }));
 
-// 테스트 결과 저장
+// 성향별 결과 URL 생성 (MBTI-Character 형식)
+// 예: INTJ-eigen, ENFP-teto
 app.post('/api/test-results', async (c) => {
   try {
-    // 요청 시마다 만료된 데이터 정리
-    cleanupExpiredResults();
-    
     const body = await c.req.json();
-    // UUID 생성 - Cloudflare Workers 호환
-    const id = generateUUID();
-    const now = new Date();
-    const expiresAt = Date.now() + (24 * 60 * 60 * 1000); // 24시간 후 만료
+    const { personalityType, character, ...resultData } = body;
+    
+    // 영문 캐릭터명 변환
+    const characterEn = character === '에겐' ? 'eigen' : 'teto';
+    const resultId = `${personalityType}-${characterEn}`;
     
     const result = {
-      ...body,
-      id,
-      createdAt: now.toISOString(),
-      expiresAt: new Date(expiresAt).toISOString()
+      ...resultData,
+      id: resultId,
+      personalityType,
+      character,
+      createdAt: new Date().toISOString()
     };
     
-    // 만료 시간과 함께 저장
-    storage.set(id, {
-      data: result,
-      expiresAt: expiresAt
-    });
-    
-    console.log(`새 결과 저장: ${id}, 만료 시간: ${new Date(expiresAt).toISOString()}`);
+    console.log(`결과 생성: ${resultId}`);
     
     return c.json(result, 201);
   } catch (error) {
-    console.error('Error saving test result:', error);
-    return c.json({ error: 'Failed to save test result' }, 500);
+    console.error('Error processing test result:', error);
+    return c.json({ error: 'Failed to process test result' }, 500);
   }
 });
 
-// 테스트 결과 조회
+// 성향별 결과 조회 (실제로는 클라이언트에서 동적 생성)
 app.get('/api/test-results/:id', async (c) => {
   try {
-    // 요청 시마다 만료된 데이터 정리
-    cleanupExpiredResults();
-    
     const id = c.req.param('id');
-    const storedResult = storage.get(id);
     
-    if (!storedResult) {
-      return c.json({ error: 'Test result not found' }, 404);
+    // ID 형식 검증 (MBTI-character)
+    const match = id.match(/^([A-Z]{4})-(eigen|teto)$/);
+    if (!match) {
+      return c.json({ error: 'Invalid result ID format' }, 400);
     }
     
-    // 만료 시간 확인
-    const now = Date.now();
-    if (now > storedResult.expiresAt) {
-      storage.delete(id);
-      console.log(`만료된 결과 접근 시도 및 삭제: ${id}`);
-      return c.json({ error: 'Test result has expired' }, 410); // 410 Gone
-    }
+    const [, personalityType, characterEn] = match;
+    const character = characterEn === 'eigen' ? '에겐' : '테토';
     
-    return c.json(storedResult.data);
+    // 클라이언트에서 재계산할 수 있도록 기본 정보만 반환
+    const result = {
+      id,
+      personalityType,
+      character,
+      message: 'Result found - redirect to client for calculation'
+    };
+    
+    return c.json(result, 200);
   } catch (error) {
-    console.error('Error fetching test result:', error);
-    return c.json({ error: 'Failed to fetch test result' }, 500);
+    console.error('Error retrieving test result:', error);
+    return c.json({ error: 'Failed to retrieve test result' }, 500);
   }
 });
 
-// 헬스 체크 및 통계
-app.get('/api/health', (c) => {
-  cleanupExpiredResults(); // 헬스 체크 시 정리 실행
-  
-  return c.json({ 
-    status: 'ok', 
+// 헬스 체크
+app.get('/api/health', async (c) => {
+  return c.json({
+    status: 'ok',
     timestamp: new Date().toISOString(),
-    storedResults: storage.size,
-    memoryUsage: process.memoryUsage ? process.memoryUsage() : null
+    message: 'Personality test API is running'
   });
+});
+
+// 404 핸들러
+app.notFound((c) => {
+  return c.json({ error: 'Not Found' }, 404);
+});
+
+// 에러 핸들러
+app.onError((err, c) => {
+  console.error('Unhandled error:', err);
+  return c.json({ error: 'Internal Server Error' }, 500);
 });
 
 export const onRequest = handle(app);
