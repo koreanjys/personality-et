@@ -38,6 +38,7 @@ export default function Home() {
     if (resultId) {
       // 결과 ID 형식 확인 (MBTI-character)
       const match = resultId.match(/^([A-Z]{4})-(eigen|teto)$/);
+      
       if (match) {
         const [, personalityType, characterEn] = match;
         const character = characterEn === 'eigen' ? '에겐' : '테토';
@@ -45,22 +46,14 @@ export default function Home() {
         // 성향과 캐릭터 정보로 결과 재계산
         setPersonalityType(personalityType);
         
-        // 결과 설명 계산
-        const calculatedResult = getResultDescription(personalityType);
+        // 결과 설명 계산 (전체 키 형태로 조회)
+        const fullKey = `${personalityType} + ${character}`;
+        const calculatedResult = getResultDescription(fullKey);
         
-        // 최고 궁합을 지정된 캐릭터로 설정
-        const updatedResult = {
-          ...calculatedResult,
-          bestMatch: character,
-          bestMatchDesc: character === '에겐' ? 
-            '에겐과 완벽한 궁합을 보여줍니다!' : 
-            '테토와 완벽한 궁합을 보여줍니다!'
-        };
-        
-        setResultDescription(updatedResult);
+        setResultDescription(calculatedResult);
         setCurrentScreen("result");
         
-        console.log(`공유된 결과 로드: ${personalityType} - ${character}`);
+        console.log(`공유된 결과 로드 완료: ${personalityType} - ${character}`);
       } else {
         console.error('잘못된 결과 ID 형식:', resultId);
         alert('잘못된 공유 링크입니다.');
