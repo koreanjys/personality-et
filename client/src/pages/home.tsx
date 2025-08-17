@@ -26,16 +26,40 @@ export default function Home() {
     worstMatch: "",
     worstMatchDesc: ""
   });
+  const [isLoadingSharedResult, setIsLoadingSharedResult] = useState(false);
 
   // URL에서 공유된 결과 확인
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
+    const resultId = urlParams.get('id');
     const result = urlParams.get('result');
     const type = urlParams.get('type');
     
-    if (result && type) {
+    if (resultId) {
+      // 짧은 ID로 서버에서 결과 로드
+      setIsLoadingSharedResult(true);
+      fetch(`/api/test-results/${resultId}`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('결과를 찾을 수 없습니다');
+          }
+          return response.json();
+        })
+        .then(data => {
+          setPersonalityType(data.personalityType);
+          setResultDescription(data.resultDescription);
+          setCurrentScreen("result");
+        })
+        .catch(error => {
+          console.error('서버에서 결과 로드 중 오류:', error);
+          alert('공유된 결과를 불러올 수 없습니다.');
+        })
+        .finally(() => {
+          setIsLoadingSharedResult(false);
+        });
+    } else if (result && type) {
       try {
-        // URL에서 결과 정보 복원
+        // 기존 긴 URL 방식 지원 (하위 호환성)
         const decodedResult = JSON.parse(decodeURIComponent(result));
         setPersonalityType(type);
         setResultDescription(decodedResult);
@@ -50,7 +74,7 @@ export default function Home() {
   useEffect(() => {
     const handlePopState = () => {
       const urlParams = new URLSearchParams(window.location.search);
-      if (!urlParams.has('result')) {
+      if (!urlParams.has('result') && !urlParams.has('id')) {
         setCurrentScreen("welcome");
         setCurrentQuestionIndex(0);
         setAnswers([]);
@@ -95,26 +119,61 @@ export default function Home() {
     setCurrentScreen("result");
   };
 
-  const handleShareResult = () => {
+  const handleShareResult = async () => {
     console.log('handleShareResult 호출됨');
     const shareText = t('result.shareText', { type: personalityType });
     
-    // 결과 정보를 URL 파라미터로 인코딩
-    const resultData = encodeURIComponent(JSON.stringify(resultDescription));
-    const shareUrl = `${window.location.origin}${window.location.pathname}?type=${encodeURIComponent(personalityType)}&result=${resultData}`;
-    
-    if (navigator.share) {
-      console.log('네이티브 공유 사용');
-      navigator.share({
-        title: t('common.appTitle'),
-        text: shareText,
-        url: shareUrl
+    try {
+      // 결과를 서버에 저장
+      const response = await fetch('/api/test-results', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          personalityType,
+          resultDescription,
+          language: t('common.language') === 'Language' ? 'en' : 'ko'
+        }),
       });
-    } else {
-      console.log('클립보드 복사 사용');
-      navigator.clipboard.writeText(shareText + ' ' + shareUrl).then(() => {
-        alert('결과가 클립보드에 복사되었습니다!');
-      });
+
+      if (!response.ok) {
+        throw new Error('결과 저장 실패');
+      }
+
+      const savedResult = await response.json();
+      const shareUrl = `${window.location.origin}${window.location.pathname}?id=${savedResult.id}`;
+      
+      if (navigator.share) {
+        console.log('네이티브 공유 사용');
+        navigator.share({
+          title: t('common.appTitle'),
+          text: shareText,
+          url: shareUrl
+        });
+      } else {
+        console.log('클립보드 복사 사용');
+        navigator.clipboard.writeText(shareText + ' ' + shareUrl).then(() => {
+          alert('결과가 클립보드에 복사되었습니다!');
+        });
+      }
+    } catch (error) {
+      console.error('결과 공유 중 오류:', error);
+      // 실패 시 기존 방식으로 폴백
+      const resultData = encodeURIComponent(JSON.stringify(resultDescription));
+      const shareUrl = `${window.location.origin}${window.location.pathname}?type=${encodeURIComponent(personalityType)}&result=${resultData}`;
+      
+      if (navigator.share) {
+        navigator.share({
+          title: t('common.appTitle'),
+          text: shareText,
+          url: shareUrl
+        });
+      } else {
+        navigator.clipboard.writeText(shareText + ' ' + shareUrl).then(() => {
+          alert('결과가 클립보드에 복사되었습니다!');
+        });
+      }
     }
   };
 
@@ -207,11 +266,18 @@ export default function Home() {
 
       <main className="flex-1 py-8">
         <div className="max-w-4xl mx-auto px-4">
-          {currentScreen === "welcome" && (
+          {isLoadingSharedResult && (
+            <div className="text-center py-16">
+              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+              <p className="mt-4 text-slate-600">{t('loading.loadingSharedResult', '공유된 결과를 불러오는 중...')}</p>
+            </div>
+          )}
+
+          {!isLoadingSharedResult && currentScreen === "welcome" && (
             <WelcomeScreen onStartTest={handleStartTest} />
           )}
-          
-          {currentScreen === "test" && (
+
+          {!isLoadingSharedResult && currentScreen === "test" && (
             <TestScreen
               question={localizedQuestions[currentQuestionIndex]}
               currentQuestionIndex={currentQuestionIndex}
@@ -220,18 +286,18 @@ export default function Home() {
             />
           )}
 
-          {currentScreen === "loading" && (
+          {!isLoadingSharedResult && currentScreen === "loading" && (
             <LoadingScreen onComplete={handleLoadingComplete} />
           )}
 
-          {currentScreen === "result" && (
+          {!isLoadingSharedResult && currentScreen === "result" && (
             <ResultScreen
               personalityType={personalityType}
               resultDescription={resultDescription}
               onShareResult={handleShareResult}
               onRestartTest={handleRestartTest}
               onDownloadResult={handleDownloadResult}
-              isSharedResult={new URLSearchParams(window.location.search).has('result')}
+              isSharedResult={new URLSearchParams(window.location.search).has('result') || new URLSearchParams(window.location.search).has('id')}
             />
           )}
         </div>

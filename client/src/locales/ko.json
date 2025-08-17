@@ -38,7 +38,8 @@
   "loading": {
     "analyzing": "성향 분석 중...",
     "calculating": "궁합 계산 중...",
-    "almostDone": "거의 완료되었습니다!"
+    "almostDone": "거의 완료되었습니다!",
+    "loadingSharedResult": "공유된 결과를 불러오는 중..."
   },
   "result": {
     "title": "당신의 성향",

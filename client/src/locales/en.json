@@ -37,7 +37,8 @@
   "loading": {
     "analyzing": "Analyzing personality...",
     "calculating": "Calculating compatibility...",
-    "almostDone": "Almost done!"
+    "almostDone": "Almost done!",
+    "loadingSharedResult": "Loading shared result..."
   },
   "result": {
     "title": "Your Personality",
