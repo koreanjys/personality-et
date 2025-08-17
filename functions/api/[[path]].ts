@@ -11,6 +11,15 @@ interface StoredResult {
 
 const storage = new Map<string, StoredResult>();
 
+// UUID 생성 함수 (Cloudflare Workers 호환)
+const generateUUID = (): string => {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+    const r = Math.random() * 16 | 0;
+    const v = c === 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+};
+
 // 만료된 결과 정리 함수
 const cleanupExpiredResults = () => {
   const now = Date.now();
@@ -21,9 +30,6 @@ const cleanupExpiredResults = () => {
     }
   }
 };
-
-// 5분마다 만료된 데이터 정리
-setInterval(cleanupExpiredResults, 5 * 60 * 1000);
 
 const app = new Hono();
 
@@ -37,8 +43,12 @@ app.use('*', cors({
 // 테스트 결과 저장
 app.post('/api/test-results', async (c) => {
   try {
+    // 요청 시마다 만료된 데이터 정리
+    cleanupExpiredResults();
+    
     const body = await c.req.json();
-    const id = crypto.randomUUID();
+    // UUID 생성 - Cloudflare Workers 호환
+    const id = generateUUID();
     const now = new Date();
     const expiresAt = Date.now() + (24 * 60 * 60 * 1000); // 24시간 후 만료
     
@@ -67,6 +77,9 @@ app.post('/api/test-results', async (c) => {
 // 테스트 결과 조회
 app.get('/api/test-results/:id', async (c) => {
   try {
+    // 요청 시마다 만료된 데이터 정리
+    cleanupExpiredResults();
+    
     const id = c.req.param('id');
     const storedResult = storage.get(id);
     
