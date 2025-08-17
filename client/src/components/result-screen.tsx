@@ -26,16 +26,10 @@ export function ResultScreen({
   // 번역 키 생성 (현재 personalities 객체의 키 형식에 맞춤)
   const personalityKey = personalityType; // "ENFJ + 테토" 형식 그대로 사용
   
-  // 디버깅을 위한 로그
-  console.log('personalityType:', personalityType);
-  console.log('personalityKey:', personalityKey);
-  
   // 번역된 설명 가져오기 (fallback으로 기존 데이터 사용)
   const getLocalizedText = (key: string, fallback: string) => {
     const translationKey = `personalities.${personalityKey}.${key}`;
-    console.log('Looking up translation key:', translationKey);
     const translatedText = t(translationKey, { defaultValue: '' });
-    console.log('Translation result:', translatedText);
     return translatedText || fallback;
   };
 
