@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import { useTranslation } from "react-i18next";
 import type { Question } from "@shared/schema";
 
 interface TestScreenProps {
@@ -16,6 +17,7 @@ export function TestScreen({
   totalQuestions, 
   onSelectOption 
 }: TestScreenProps) {
+  const { t } = useTranslation();
   const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
 
   return (
@@ -23,9 +25,9 @@ export function TestScreen({
       {/* Progress bar */}
       <div className="mb-8">
         <div className="flex justify-between items-center mb-2">
-          <span className="text-sm font-medium text-slate-600">진행률</span>
+          <span className="text-sm font-medium text-slate-600">{t('test.progressLabel', '진행률')}</span>
           <span className="text-sm font-medium text-primary" data-testid="text-progress">
-            {currentQuestionIndex + 1} / {totalQuestions}
+            {t('test.progress', { current: currentQuestionIndex + 1, total: totalQuestions })}
           </span>
         </div>
         <Progress value={progress} className="h-2" data-testid="progress-bar" />
@@ -36,7 +38,7 @@ export function TestScreen({
         <CardContent className="p-8 md:p-12">
           <div className="text-center mb-8">
             <span className="text-primary font-semibold text-lg" data-testid="text-question-number">
-              질문 {currentQuestionIndex + 1}
+              {t('test.questionNumber', { number: currentQuestionIndex + 1 })}
             </span>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mt-4 mb-8" data-testid="text-question">
               {question.question}

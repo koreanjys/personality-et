@@ -1,7 +1,5 @@
 import type { Question } from "@shared/schema";
-import { useTranslation } from "react-i18next";
 
-// Static Korean questions for backward compatibility
 export const questions: Question[] = [
   {
     id: 1,
@@ -74,81 +72,3 @@ export const questions: Question[] = [
     type: "EI",
   },
 ];
-
-// Hook for getting localized questions
-export const useLocalizedQuestions = (): Question[] => {
-  const { t } = useTranslation();
-
-  return [
-    {
-      id: 1,
-      question: t('questions.q1.question'),
-      optionA: t('questions.q1.answers.a'),
-      optionB: t('questions.q1.answers.b'),
-      type: "EI",
-    },
-    {
-      id: 2,
-      question: t('questions.q2.question'),
-      optionA: t('questions.q2.answers.a'),
-      optionB: t('questions.q2.answers.b'),
-      type: "EI",
-    },
-    {
-      id: 3,
-      question: t('questions.q3.question'),
-      optionA: t('questions.q3.answers.a'),
-      optionB: t('questions.q3.answers.b'),
-      type: "SN",
-    },
-    {
-      id: 4,
-      question: t('questions.q4.question'),
-      optionA: t('questions.q4.answers.a'),
-      optionB: t('questions.q4.answers.b'),
-      type: "SN",
-    },
-    {
-      id: 5,
-      question: t('questions.q5.question'),
-      optionA: t('questions.q5.answers.a'),
-      optionB: t('questions.q5.answers.b'),
-      type: "TF",
-    },
-    {
-      id: 6,
-      question: t('questions.q6.question'),
-      optionA: t('questions.q6.answers.a'),
-      optionB: t('questions.q6.answers.b'),
-      type: "TF",
-    },
-    {
-      id: 7,
-      question: t('questions.q7.question'),
-      optionA: t('questions.q7.answers.a'),
-      optionB: t('questions.q7.answers.b'),
-      type: "JP",
-    },
-    {
-      id: 8,
-      question: t('questions.q8.question'),
-      optionA: t('questions.q8.answers.a'),
-      optionB: t('questions.q8.answers.b'),
-      type: "JP",
-    },
-    {
-      id: 9,
-      question: t('questions.q9.question'),
-      optionA: t('questions.q9.answers.a'),
-      optionB: t('questions.q9.answers.b'),
-      type: "JP",
-    },
-    {
-      id: 10,
-      question: t('questions.q10.question'),
-      optionA: t('questions.q10.answers.a'),
-      optionB: t('questions.q10.answers.b'),
-      type: "EI",
-    },
-  ];
-};

@@ -2,13 +2,22 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Brain } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface LoadingScreenProps {
   onComplete: () => void;
 }
 
 export function LoadingScreen({ onComplete }: LoadingScreenProps) {
+  const { t } = useTranslation();
   const [progress, setProgress] = useState(0);
+  const [currentMessage, setCurrentMessage] = useState(0);
+
+  const messages = [
+    t('loading.analyzing'),
+    t('loading.calculating'),
+    t('loading.almostDone')
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,8 +31,15 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
       });
     }, 200);
 
-    return () => clearInterval(interval);
-  }, [onComplete]);
+    const messageInterval = setInterval(() => {
+      setCurrentMessage(prev => (prev + 1) % messages.length);
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+      clearInterval(messageInterval);
+    };
+  }, [onComplete, messages.length]);
 
   return (
     <div data-testid="loading-screen">
@@ -34,11 +50,8 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
               <Brain className="text-white text-2xl animate-pulse" />
             </div>
             <h2 className="text-2xl font-bold text-slate-800 mb-4" data-testid="text-loading-title">
-              결과를 분석중입니다...
+              {messages[currentMessage]}
             </h2>
-            <p className="text-slate-600 mb-8" data-testid="text-loading-description">
-              당신의 성향과 궁합을 계산하고 있습니다
-            </p>
             
             {/* Loading animation */}
             <div className="flex justify-center space-x-2 mb-6">

@@ -1,17 +1,20 @@
 import { useState } from "react";
 import html2canvas from "html2canvas";
 import { Brain } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { WelcomeScreen } from "@/components/welcome-screen";
 import { TestScreen } from "@/components/test-screen";
 import { LoadingScreen } from "@/components/loading-screen";
 import { ResultScreen } from "@/components/result-screen";
-import { questions } from "@/lib/test-data";
+import { questions, useLocalizedQuestions } from "@/lib/test-data";
 import { calculatePersonalityType, getResultDescription } from "@/lib/result-calculator";
 import type { Answer } from "@shared/schema";
 
 type Screen = "welcome" | "test" | "loading" | "result";
 
 export default function Home() {
+  const { t } = useTranslation();
+  const localizedQuestions = useLocalizedQuestions();
   const [currentScreen, setCurrentScreen] = useState<Screen>("welcome");
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<Answer[]>([]);
@@ -32,14 +35,14 @@ export default function Home() {
 
   const handleSelectOption = (option: "A" | "B") => {
     const newAnswer: Answer = {
-      questionId: questions[currentQuestionIndex].id,
+      questionId: localizedQuestions[currentQuestionIndex].id,
       selectedOption: option
     };
 
     const newAnswers = [...answers, newAnswer];
     setAnswers(newAnswers);
 
-    if (currentQuestionIndex < questions.length - 1) {
+    if (currentQuestionIndex < localizedQuestions.length - 1) {
       setTimeout(() => {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
       }, 200);
@@ -59,12 +62,12 @@ export default function Home() {
 
   const handleShareResult = () => {
     console.log('handleShareResult 호출됨');
-    const shareText = `나의 성향 테스트 결과: ${personalityType}! 당신도 테스트해보세요! #성향테스트 #에겐테토`;
+    const shareText = t('result.shareText', { type: personalityType });
     
     if (navigator.share) {
       console.log('네이티브 공유 사용');
       navigator.share({
-        title: '성향 & 에겐-테토 궁합 테스트',
+        title: t('common.appTitle'),
         text: shareText,
         url: window.location.href
       });
@@ -148,10 +151,10 @@ export default function Home() {
             <div className="text-center">
               <h1 className="text-2xl md:text-3xl font-bold text-slate-800" data-testid="text-app-title">
                 <Brain className="inline text-primary mr-3" />
-                성향 & 에겐-테토 궁합 테스트
+                {t('common.appTitle')}
               </h1>
               <p className="text-slate-600 mt-2" data-testid="text-app-subtitle">
-                당신의 성향과 연애 스타일을 발견해보세요
+                {t('common.appSubtitle')}
               </p>
             </div>
           </div>
@@ -166,9 +169,9 @@ export default function Home() {
           
           {currentScreen === "test" && (
             <TestScreen
-              question={questions[currentQuestionIndex]}
+              question={localizedQuestions[currentQuestionIndex]}
               currentQuestionIndex={currentQuestionIndex}
-              totalQuestions={questions.length}
+              totalQuestions={localizedQuestions.length}
               onSelectOption={handleSelectOption}
             />
           )}
@@ -194,10 +197,10 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 py-8">
           <div className="text-center text-slate-500">
             <p className="mb-2" data-testid="text-copyright">
-              © 2024 성향 & 에겐-테토 궁합 테스트. All rights reserved.
+              © 2024 {t('common.appTitle')}. All rights reserved.
             </p>
             <p className="text-sm" data-testid="text-disclaimer">
-              이 테스트는 재미와 자기 이해를 위한 것입니다. 전문적인 심리 상담을 대체하지 않습니다.
+              {t('common.disclaimer')}
             </p>
           </div>
         </div>
