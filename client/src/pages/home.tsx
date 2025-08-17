@@ -1,4 +1,5 @@
 import { useState } from "react";
+import html2canvas from "html2canvas";
 import { Brain } from "lucide-react";
 import { WelcomeScreen } from "@/components/welcome-screen";
 import { TestScreen } from "@/components/test-screen";
@@ -57,15 +58,18 @@ export default function Home() {
   };
 
   const handleShareResult = () => {
+    console.log('handleShareResult 호출됨');
     const shareText = `나의 성향 테스트 결과: ${personalityType}! 당신도 테스트해보세요! #성향테스트 #에겐테토`;
     
     if (navigator.share) {
+      console.log('네이티브 공유 사용');
       navigator.share({
         title: '성향 & 에겐-테토 궁합 테스트',
         text: shareText,
         url: window.location.href
       });
     } else {
+      console.log('클립보드 복사 사용');
       navigator.clipboard.writeText(shareText + ' ' + window.location.href).then(() => {
         alert('결과가 클립보드에 복사되었습니다!');
       });
@@ -73,14 +77,66 @@ export default function Home() {
   };
 
   const handleRestartTest = () => {
+    console.log('handleRestartTest 호출됨');
     setCurrentScreen("welcome");
     setCurrentQuestionIndex(0);
     setAnswers([]);
     setPersonalityType("");
   };
 
-  const handleDownloadResult = () => {
-    alert('결과 저장 기능은 준비중입니다!');
+  const handleDownloadResult = async () => {
+    console.log('handleDownloadResult 호출됨');
+    
+    try {
+      // 결과 화면을 찾습니다
+      const resultElement = document.querySelector('[data-testid="result-screen"]') as HTMLElement;
+      
+      if (!resultElement) {
+        alert('결과 화면을 찾을 수 없습니다.');
+        return;
+      }
+
+      // 스크롤을 맨 위로 이동
+      window.scrollTo(0, 0);
+      
+      // 잠시 대기 (스크롤 애니메이션 완료 대기)
+      await new Promise(resolve => setTimeout(resolve, 100));
+
+      // HTML을 캔버스로 변환
+      const canvas = await html2canvas(resultElement, {
+        scale: 2, // 고해상도를 위해 스케일 증가
+        useCORS: true,
+        allowTaint: true,
+        backgroundColor: '#ffffff',
+        width: resultElement.scrollWidth,
+        height: resultElement.scrollHeight,
+      });
+
+      // 캔버스를 blob으로 변환
+      canvas.toBlob((blob) => {
+        if (blob) {
+          // 다운로드 링크 생성
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement('a');
+          link.href = url;
+          link.download = `성향테스트_결과_${personalityType}_${new Date().getTime()}.png`;
+          
+          // 다운로드 실행
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          
+          // 메모리 해제
+          URL.revokeObjectURL(url);
+          
+          alert('결과가 이미지로 저장되었습니다!');
+        }
+      }, 'image/png');
+      
+    } catch (error) {
+      console.error('결과 저장 중 오류 발생:', error);
+      alert('결과 저장 중 오류가 발생했습니다. 다시 시도해주세요.');
+    }
   };
 
   return (
