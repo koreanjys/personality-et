@@ -40,20 +40,20 @@ export default function Home() {
       const match = resultId.match(/^([A-Z]{4})-(eigen|teto)$/);
       
       if (match) {
-        const [, personalityType, characterEn] = match;
+        const [, mbtiType, characterEn] = match;
         const character = characterEn === 'eigen' ? '에겐' : '테토';
         
-        // 성향과 캐릭터 정보로 결과 재계산
-        setPersonalityType(personalityType);
+        // 전체 personalityType 재구성
+        const fullPersonalityType = `${mbtiType} + ${character}`;
+        setPersonalityType(fullPersonalityType);
         
-        // 결과 설명 계산 (전체 키 형태로 조회)
-        const fullKey = `${personalityType} + ${character}`;
-        const calculatedResult = getResultDescription(fullKey);
+        // 결과 설명 계산
+        const calculatedResult = getResultDescription(fullPersonalityType);
         
         setResultDescription(calculatedResult);
         setCurrentScreen("result");
         
-        console.log(`공유된 결과 로드 완료: ${personalityType} - ${character}`);
+        console.log(`공유된 결과 로드 완료: ${fullPersonalityType}`);
       } else {
         console.error('잘못된 결과 ID 형식:', resultId);
         alert('잘못된 공유 링크입니다.');
@@ -125,22 +125,14 @@ export default function Home() {
     const shareText = t('result.shareText', { type: personalityType });
     
     try {
-      // 최고 궁합 캐릭터 찾기 (bestMatch에서 캐릭터 부분만 추출)
-      const bestMatch = resultDescription.bestMatch;
-      let character = '';
-      
-      if (bestMatch.includes('에겐')) {
-        character = '에겐';
-      } else if (bestMatch.includes('테토')) {
-        character = '테토';
-      } else {
-        // 기본값으로 에겐 설정
-        character = '에겐';
-      }
+      // personalityType에서 MBTI와 캐릭터 분리 (예: "ENFJ + 테토" -> ["ENFJ", "테토"])
+      const parts = personalityType.split(' + ');
+      const mbtiType = parts[0]; // "ENFJ"
+      const character = parts[1]; // "테토"
       
       // 영문 캐릭터명 변환
       const characterEn = character === '에겐' ? 'eigen' : 'teto';
-      const resultId = `${personalityType}-${characterEn}`;
+      const resultId = `${mbtiType}-${characterEn}`;
       
       // 고정 URL 생성
       const shareUrl = `${window.location.origin}${window.location.pathname}?id=${resultId}`;
