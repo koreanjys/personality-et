@@ -23,12 +23,19 @@ export function ResultScreen({
 }: ResultScreenProps) {
   const { t } = useTranslation();
 
-  // 번역 키 생성 (공백과 플러스 기호를 언더스코어로 변경)
-  const personalityKey = personalityType.replace(/\s+/g, '_').replace(/\+/g, '+');
+  // 번역 키 생성 (현재 personalities 객체의 키 형식에 맞춤)
+  const personalityKey = personalityType; // "ENFJ + 테토" 형식 그대로 사용
+  
+  // 디버깅을 위한 로그
+  console.log('personalityType:', personalityType);
+  console.log('personalityKey:', personalityKey);
   
   // 번역된 설명 가져오기 (fallback으로 기존 데이터 사용)
   const getLocalizedText = (key: string, fallback: string) => {
-    const translatedText = t(`personalities.${personalityKey}.${key}`, { defaultValue: '' });
+    const translationKey = `personalities.${personalityKey}.${key}`;
+    console.log('Looking up translation key:', translationKey);
+    const translatedText = t(translationKey, { defaultValue: '' });
+    console.log('Translation result:', translatedText);
     return translatedText || fallback;
   };
 
