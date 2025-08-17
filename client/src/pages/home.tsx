@@ -125,11 +125,21 @@ export default function Home() {
     const shareText = t('result.shareText', { type: personalityType });
     
     try {
-      // 최고 궁합 캐릭터 찾기
-      const bestCharacter = resultDescription.bestMatch;
+      // 최고 궁합 캐릭터 찾기 (bestMatch에서 캐릭터 부분만 추출)
+      const bestMatch = resultDescription.bestMatch;
+      let character = '';
+      
+      if (bestMatch.includes('에겐')) {
+        character = '에겐';
+      } else if (bestMatch.includes('테토')) {
+        character = '테토';
+      } else {
+        // 기본값으로 에겐 설정
+        character = '에겐';
+      }
       
       // 영문 캐릭터명 변환
-      const characterEn = bestCharacter === '에겐' ? 'eigen' : 'teto';
+      const characterEn = character === '에겐' ? 'eigen' : 'teto';
       const resultId = `${personalityType}-${characterEn}`;
       
       // 고정 URL 생성
