@@ -41,6 +41,11 @@ export default function Home() {
       fetch(`/api/test-results/${resultId}`)
         .then(response => {
           if (!response.ok) {
+            if (response.status === 410) {
+              throw new Error('EXPIRED');
+            } else if (response.status === 404) {
+              throw new Error('NOT_FOUND');
+            }
             throw new Error('결과를 찾을 수 없습니다');
           }
           return response.json();
@@ -52,7 +57,13 @@ export default function Home() {
         })
         .catch(error => {
           console.error('서버에서 결과 로드 중 오류:', error);
-          alert('공유된 결과를 불러올 수 없습니다.');
+          if (error.message === 'EXPIRED') {
+            alert('공유된 결과가 만료되었습니다. (24시간 후 자동 삭제)');
+          } else if (error.message === 'NOT_FOUND') {
+            alert('공유된 결과를 찾을 수 없습니다.');
+          } else {
+            alert('공유된 결과를 불러올 수 없습니다.');
+          }
         })
         .finally(() => {
           setIsLoadingSharedResult(false);
