@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import html2canvas from "html2canvas";
 import { Brain } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -26,6 +26,41 @@ export default function Home() {
     worstMatch: "",
     worstMatchDesc: ""
   });
+
+  // URL에서 공유된 결과 확인
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const result = urlParams.get('result');
+    const type = urlParams.get('type');
+    
+    if (result && type) {
+      try {
+        // URL에서 결과 정보 복원
+        const decodedResult = JSON.parse(decodeURIComponent(result));
+        setPersonalityType(type);
+        setResultDescription(decodedResult);
+        setCurrentScreen("result");
+      } catch (error) {
+        console.error('공유된 결과 로드 중 오류:', error);
+      }
+    }
+  }, []);
+
+  // 브라우저 뒤로가기 감지
+  useEffect(() => {
+    const handlePopState = () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (!urlParams.has('result')) {
+        setCurrentScreen("welcome");
+        setCurrentQuestionIndex(0);
+        setAnswers([]);
+        setPersonalityType("");
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   const handleStartTest = () => {
     setCurrentScreen("test");
@@ -64,16 +99,20 @@ export default function Home() {
     console.log('handleShareResult 호출됨');
     const shareText = t('result.shareText', { type: personalityType });
     
+    // 결과 정보를 URL 파라미터로 인코딩
+    const resultData = encodeURIComponent(JSON.stringify(resultDescription));
+    const shareUrl = `${window.location.origin}${window.location.pathname}?type=${encodeURIComponent(personalityType)}&result=${resultData}`;
+    
     if (navigator.share) {
       console.log('네이티브 공유 사용');
       navigator.share({
         title: t('common.appTitle'),
         text: shareText,
-        url: window.location.href
+        url: shareUrl
       });
     } else {
       console.log('클립보드 복사 사용');
-      navigator.clipboard.writeText(shareText + ' ' + window.location.href).then(() => {
+      navigator.clipboard.writeText(shareText + ' ' + shareUrl).then(() => {
         alert('결과가 클립보드에 복사되었습니다!');
       });
     }
@@ -85,6 +124,11 @@ export default function Home() {
     setCurrentQuestionIndex(0);
     setAnswers([]);
     setPersonalityType("");
+    
+    // URL 파라미터 초기화
+    const url = new URL(window.location.href);
+    url.search = '';
+    window.history.replaceState({}, '', url.toString());
   };
 
   const handleDownloadResult = async () => {
@@ -187,6 +231,7 @@ export default function Home() {
               onShareResult={handleShareResult}
               onRestartTest={handleRestartTest}
               onDownloadResult={handleDownloadResult}
+              isSharedResult={new URLSearchParams(window.location.search).has('result')}
             />
           )}
         </div>

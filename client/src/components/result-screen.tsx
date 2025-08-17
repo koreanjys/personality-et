@@ -10,6 +10,7 @@ interface ResultScreenProps {
   onShareResult: () => void;
   onRestartTest: () => void;
   onDownloadResult: () => void;
+  isSharedResult?: boolean;
 }
 
 export function ResultScreen({ 
@@ -17,7 +18,8 @@ export function ResultScreen({
   resultDescription, 
   onShareResult, 
   onRestartTest, 
-  onDownloadResult 
+  onDownloadResult,
+  isSharedResult = false
 }: ResultScreenProps) {
   const { t } = useTranslation();
 
@@ -49,6 +51,13 @@ export function ResultScreen({
       {/* Main result card */}
       <Card className="rounded-2xl shadow-lg">
         <CardContent className="p-8 md:p-12 text-center">
+          {isSharedResult && (
+            <div className="mb-4">
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                {t('common.sharedResult', '공유된 결과')}
+              </span>
+            </div>
+          )}
           <div className="mb-8">
             <div className="inline-flex items-center justify-center w-20 h-20 bg-primary rounded-full mb-6">
               <User className="text-white text-3xl" />
@@ -136,7 +145,7 @@ export function ResultScreen({
               data-testid="button-restart-test"
             >
               <RotateCcw className="mr-2" />
-              {t('result.restartButton')}
+              {isSharedResult ? t('common.startNewTest', '새 테스트 시작하기') : t('result.restartButton')}
             </Button>
             
             <Button 

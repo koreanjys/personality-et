@@ -4,7 +4,9 @@
     "disclaimer": "This test is for fun and self-understanding. It does not replace professional psychological counseling.",
     "language": "Language",
     "korean": "한국어",
-    "english": "English"
+    "english": "English",
+    "startNewTest": "Start New Test",
+    "sharedResult": "Shared Result"
   },
   "characters": {
     "에겐": "Egen",
