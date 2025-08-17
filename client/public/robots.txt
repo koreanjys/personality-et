@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://personality-et.pages.dev/sitemap.xml
+Sitemap: https://personality-et.jybr.me/sitemap.xml
 
 # Google AdSense
 User-agent: Mediapartners-Google
