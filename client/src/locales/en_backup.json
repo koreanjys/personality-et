@@ -57,7 +57,7 @@
       "description": "As a charismatic leader with execution power, you are an influential person with excellent ability to lead people and achieve goals. In relationships, you actively pursue growing and developing together with your partner, enjoying bringing out each other's maximum potential. You lead relationships with outstanding communication skills and drive, supporting and encouraging your partner to become a better person. You value both emotional connection and practical achievement, forming deep bonds in the process of achieving dreams together as a dynamic and devoted lover.",
       "bestMatch": "ISFP + 에겐",
       "bestMatchDesc": "The best match ISFP + Egen creates beautiful harmony between their free and emotional nature and your active leadership.",
-      "worstMatch": "ISTP + 에겐",
+      "worstMatch": "ISTP + 에겐", 
       "worstMatchDesc": "The worst match ISTP + Egen may clash with your energetic nature due to their individualistic and passive tendencies."
     },
     "ENFJ + 에겐": {
@@ -96,32 +96,18 @@
       "worstMatchDesc": "The worst match ESFJ + Egen may have value conflicts due to their emotion-centered and traditional tendencies."
     },
     "INFJ + 에겐": {
-      "description": "Mysterious and insightful, you are an idealist with a deep inner world. In relationships, you pursue true soul connection and deep understanding, wanting meaningful and authentic connections rather than superficial relationships. With intuitive and emotional nature, you can see your partner's true self and seek relationships where you share visions for the future together. You are emotionally expressive and romantic, being a devoted lover who deeply understands and supports your partner. Though sometimes perfectionist, you have deep emotions that devote everything to love when you find true love.",
+      "description": "Mysterious and profound, you are an intuitive yet emotionally rich idealist. In relationships, you value soul connection and deep emotional bonds, pursuing true love. You understand others' emotions well with excellent empathy, striving to deeply explore and understand your partner's inner world. Though quiet, you have strong inner energy and want meaningful relationships where you pursue dreams and ideals together. With delicate sensitivity, you deeply understand your partner's heart and have the ability to break down emotional walls through genuine communication.",
       "bestMatch": "ENFP + 테토",
-      "bestMatchDesc": "The best match ENFP + Teto creates perfect balance between their lively and creative energy and your deep emotions.",
+      "bestMatchDesc": "The best match ENFP + Teto creates beautiful balance between their lively and energetic nature and your profound inner world.",
       "worstMatch": "ESTP + 테토",
-      "worstMatchDesc": "The worst match ESTP + Teto may clash with your idealism due to their spontaneous and realistic nature."
+      "worstMatchDesc": "The worst match ESTP + Teto may not align with your idealism due to their realistic and spontaneous nature."
     },
     "INFJ + 테토": {
-      "description": "Cautious and goal-oriented, you are a complete person with both inner depth and execution power. In relationships, you pursue stable and meaningful relationships based on true understanding and mutual growth. You develop relationships with your partner through intuitive insight and systematic approaches, valuing the realization of long-term visions together. You use both emotional depth and logical thinking in balance, being a wise and warm lover who discovers and supports your partner's potential. You work steadily toward goals and are a reliable companion who turns dreams into reality with your partner.",
-      "bestMatch": "ENFP + 에겐",
-      "bestMatchDesc": "The best match ENFP + Egen creates harmony between their free and creative energy and your systematic thinking.",
-      "worstMatch": "ESFP + 에겐",
-      "worstMatchDesc": "The worst match ESFP + Egen may have significant differences in planning due to their spontaneous and emotional nature."
-    },
-    "INFP + 에겐": {
-      "description": "Idealistic and emotional, you are a romanticist with a pure heart and deep emotions. In relationships, you pursue true love and perfect understanding, wanting soul connection rather than superficial relationships. You have excellent ability to deeply understand and empathize with your partner's inner world, cherishing small touches and romantic moments. You value your own values and beliefs, enjoying growing beautiful dreams together with your partner. Though sometimes easily hurt, once you love, you are a pure and sincere lover who devotes with all your heart.",
-      "bestMatch": "ESTJ + 테토",
-      "bestMatchDesc": "The best match ESTJ + Teto provides balance to your idealism with their realistic and stable nature.",
-      "worstMatch": "ENTP + 테토",
-      "worstMatchDesc": "The worst match ENTP + Teto may clash with your stability due to their change-seeking nature."
-    },
-    "INFP + 테토": {
-      "description": "Independent and creative, you are an artistic personality with your own worldview. In relationships, you pursue free yet deep relationships, wanting partnerships that respect and support each other's individuality. You steadily move toward goals based on strong beliefs and values, encouraging and supporting your partner to achieve their dreams too. With both emotional depth and execution power, you are a wise lover who balances ideals and reality well. You pursue authentic love and create relationships where you grow and develop together.",
-      "bestMatch": "ESTJ + 에겐",
-      "bestMatchDesc": "The best match ESTJ + Egen creates perfect harmony between their systematic and realistic nature and your creativity.",
-      "worstMatch": "ENTP + 에겐",
-      "worstMatchDesc": "The worst match ENTP + Egen may have significant value differences due to their overly free-spirited nature."
+      "description": "Insightful and decisive, you are an idealist with execution power who moves toward goals with vision. In relationships, you value both deep emotional connection and practical development. You see your partner's potential and try to grow together, providing balanced emotional support and practical advice. Though quiet, you have strong willpower and pursue mature partnerships where you understand and respect each other while developing together. You balance ideals and reality well, being a highly accomplished lover who pursues both depth and development in relationships.",
+      "bestMatch": "ENTP + 에겐",
+      "bestMatchDesc": "The best match ENTP + Egen creates perfect synergy between their creative and flexible thinking and your insight.",
+      "worstMatch": "ESTJ + 에겐",
+      "worstMatchDesc": "The worst match ESTJ + Egen may clash with your original thinking due to their authoritative and traditional nature."
     },
     "ENTP + 에겐": {
       "description": "Creative and flexible, you are an innovator full of ideas who also has an emotional side. In relationships, you pursue both intellectual curiosity and emotional connection, enjoying exploring new possibilities with your partner. You enjoy understanding and developing each other through conversation, showing deep interest in your partner's emotions and thoughts. You prefer free and open relationships but also don't spare sincere expressions of affection, being a multi-faceted charming lover. You excel at giving new inspiration to your partner while embracing them with a warm heart.",
@@ -137,19 +123,33 @@
       "worstMatch": "ISFJ + 에겐",
       "worstMatchDesc": "The worst match ISFJ + Egen may not align with your challenging spirit due to their traditional and stability-seeking nature."
     },
+    "INFP + 에겐": {
+      "description": "Pure and idealistic, you are an artistic soul with a deep inner world and rich emotions. In relationships, you value true understanding and deep emotional bonds above all, wanting to communicate heart to heart with your partner. You are highly sensitive and react sensitively to your partner's emotions, dreaming of true love and beautiful relationships. While valuing your own values and beliefs, you show infinitely warm and devoted aspects to those you love, being a romantic soul. You have a special perspective that finds meaning and discovers beauty even in small things.",
+      "bestMatch": "ENTJ + 테토",
+      "bestMatchDesc": "The best match ENTJ + Teto can make your ideals and emotions reality with their leadership and drive.",
+      "worstMatch": "ESTJ + 테토",
+      "worstMatchDesc": "The worst match ESTJ + Teto may clash with your delicate emotions due to their realistic and direct nature."
+    },
+    "INFP + 테토": {
+      "description": "Idealistic yet equipped with execution power, you are a principled individualist who turns dreams into reality. In relationships, you pursue deep emotional connection along with relationships that support each other's growth. You act according to your values and want to move toward meaningful goals together with your partner. Though quiet, you have strong inner motivation and show amazing drive when it comes to those you love. In genuine relationships, you reveal all aspects of yourself and are a warm and supportive lover who encourages your partner to also become their true self.",
+      "bestMatch": "ENTJ + 에겐",
+      "bestMatchDesc": "The best match ENTJ + Egen can realize your ideals together with the harmony of charisma and emotion.",
+      "worstMatch": "ESTP + 에겐",
+      "worstMatchDesc": "The worst match ESTP + Egen may not align with your deep values due to their spontaneous and present-focused nature."
+    },
     "ENTJ + 에겐": {
-      "description": "Charismatic and ambitious, you are an influential leader with both strong leadership and emotional communication. In relationships, you pursue relationships that grow and achieve together with your partner, encouraging and supporting each other to maximize potential. You are goal-oriented while carefully considering your partner's emotions and needs, pursuing both continuous development and deep connection in relationships. You express both strong drive and warm emotions in balance, being a dynamic and devoted lover who turns dreams into reality with your partner.",
+      "description": "A charismatic leader with warm emotions, you are a balanced personality who values both goal achievement and human relationships. In relationships, you value partnership, pursuing relationships where you respect each other and grow together. You have strong drive and leadership, but also have the warmth to carefully consider your partner's emotions and needs. You develop relationships with long-term vision, enjoying the process of achieving dreams together with your partner. You are active in emotional expression and become a reliable supporter and companion to those you love.",
       "bestMatch": "INFP + 테토",
-      "bestMatchDesc": "The best match INFP + Teto creates perfect harmony between their idealistic and creative emotions and your strong drive.",
+      "bestMatchDesc": "The best match INFP + Teto creates perfect harmony between their idealistic yet practical nature and your leadership.",
       "worstMatch": "ISFP + 에겐",
-      "worstMatchDesc": "The worst match ISFP + Egen may not align with your active leadership due to their overly passive and individualistic nature."
+      "worstMatchDesc": "The worst match ISFP + Egen may not align with your active energy due to their passive and introverted nature."
     },
     "ENTJ + 테토": {
-      "description": "Strong and strategic, you are a natural leader with vision who achieves goals. In relationships, you pursue growth-oriented relationships where you set clear goals with your partner and achieve them systematically. You value efficiency and results while forming strong bonds based on dedication and loyalty to your partner. With challenging and ambitious nature, you achieve greater accomplishments with your partner and are a dynamic lover with strong purpose who pursues continuous development and improvement in relationships.",
+      "description": "With powerful leadership and execution ability, you are a natural commander who sets clear goals and effectively achieves them. In relationships, you take an active and leading role, preferring relationships where you develop and achieve together with your partner. You value efficiency and results, but also consider cooperation and communication with your partner important in the process. You make long-term plans and systematically develop relationships, actively supporting your partner's growth and success. You are a reliable lover who gives your partner stability with your confident and decisive appearance.",
       "bestMatch": "INFP + 에겐",
-      "bestMatchDesc": "The best match INFP + Egen creates beautiful balance between their pure and emotional nature and your strong leadership.",
+      "bestMatchDesc": "The best match INFP + Egen creates beautiful balance between their pure and idealistic emotions and your powerful drive.",
       "worstMatch": "ISFP + 테토",
-      "worstMatchDesc": "The worst match ISFP + Teto may clash with your systematic approach due to their overly free and independent nature."
+      "worstMatchDesc": "The worst match ISFP + Teto may clash with your systematic approach due to their free and flexible nature."
     },
     "ISFP + 에겐": {
       "description": "Free and artistic, you are a sensitive individualist with deep emotions and a warm heart. In relationships, you pursue natural and genuine relationships, wanting to accept and love your partner as they are. Though quiet, you have deep affection and express love through small considerations and careful attention. You develop relationships at your own pace, revealing your true self in a free atmosphere without pressure. You are a delicate and warm lover who respects your partner's individuality and independence while forming deep emotional bonds.",
@@ -173,11 +173,11 @@
       "worstMatchDesc": "The worst match ENFJ + Teto may not align with your quiet nature due to their overly active and emotionally expressive tendencies."
     },
     "ISTP + 테토": {
-      "description": "Realistic and practical, you are a capable person who speaks through actions. In relationships, you pursue stable and practical relationships, expressing love through actions rather than words. Though independent and free-spirited, you become a reliable supporter once you open your heart to someone. You prefer gradual and natural development over sudden changes, creating mature partnerships that respect your partner's individuality and freedom. Though awkward at expressing emotions, you convey love through sincere actions and are a trustworthy lover who builds a practical and stable future together.",
+      "description": "Realistic and practical, you are a goal-oriented yet independent action-taker. In relationships, you prefer honest and stable relationships, considering it important to achieve practical goals together with your partner. You prove love through actions rather than words, excelling at providing practical solutions when your partner faces difficulties. Though awkward at expressing emotions, you show steady and unchanging affection to those you've decided on, being a reliable partner who respects each other's personal space while providing unwavering support when needed.",
       "bestMatch": "ESFJ + 에겐",
-      "bestMatchDesc": "The best match ESFJ + Egen creates perfect balance between their warm and considerate nature and your practical thinking.",
-      "worstMatch": "ENFP + 에겐",
-      "worstMatchDesc": "The worst match ENFP + Egen may have significant communication style differences due to their emotionally expressive nature."
+      "bestMatchDesc": "The best match ESFJ + Egen creates perfect balance between their warm and emotional consideration and your practical approach.",
+      "worstMatch": "ENFJ + 에겐",
+      "worstMatchDesc": "The worst match ENFJ + Egen may clash with your quiet and practical style due to their emotional and expressive nature."
     },
     "ESFJ + 에겐": {
       "description": "Warm and caring, you are an emotional supporter with excellent ability to take care of people and create harmonious relationships. In relationships, you thoughtfully consider your partner's emotions and needs, creating stable and warm relationships. You value traditional values while loving to express deep affection and care for your partner. You willingly sacrifice and dedicate yourself for your partner's happiness, pursuing healthy relationships where you encourage and support each other. With rich emotional expression and a deep heart that truly cherishes your partner, you are a devoted lover who provides stability and warmth.",
@@ -215,138 +215,158 @@
       "worstMatchDesc": "The worst match ENTP + Egen may not align with your stability pursuit due to their overly change-oriented and free nature."
     },
     "ISFJ + 테토": {
-      "description": "Systematic and reliable, you are a realistic supporter who respects tradition and rules while providing stability to organizations and people. In relationships, you pursue planned and stable relationships, valuing systematic future design with your partner. You are responsible and devoted, not sparing practical and continuous support for your partner. You build stable relationships based on traditional values and realistic approaches, being a trustworthy partner who provides a solid foundation where your partner can feel comfortable and safe.",
-      "bestMatch": "ENFP + 에겐",
-      "bestMatchDesc": "The best match ENFP + Egen creates perfect balance between their creative and free energy and your systematic nature.",
-      "worstMatch": "ESTP + 에겐",
-      "worstMatchDesc": "The worst match ESTP + Egen may clash with your planned approach due to their overly spontaneous and change-oriented nature."
+      "description": "ISFJ Teto: A systematic and reliable supporter who respects tradition and rules while providing stability to organizations and people.",
+      "bestMatch": "ENFP Teto",
+      "bestMatchDesc": "Finds balance between creativity and stability with ENFP Teto. Teto's systematic nature and Teto's creativity help each other grow.",
+      "worstMatch": "ESTP Egen",
+      "worstMatchDesc": "May experience conflicts with ESTP Egen due to approach differences. Teto's caution can clash with Egen's spontaneity."
     },
     "ESTJ + 에겐": {
-      "description": "Efficient and decisive, you are an emotional leader who systematically plans to achieve goals and creates results through cooperation with people. In relationships, you pursue stable and developmental relationships, enjoying setting clear goals with your partner and achieving them systematically. You value traditional values and realistic approaches while never forgetting to express deep consideration and affection for your partner. You strive to be a responsible and trustworthy partner, being a realistic and warm lover who pursues both order and development in relationships.",
-      "bestMatch": "ISFP + 테토",
-      "bestMatchDesc": "The best match ISFP + Teto creates perfect balance between their creative and delicate nature and your systematic leadership.",
-      "worstMatch": "INFP + 에겐",
-      "worstMatchDesc": "The worst match INFP + Egen may clash with your realistic approach due to their overly idealistic and individualistic nature."
+      "description": "ESTJ Egen: An efficient and decisive leader who systematically plans for goal achievement and collaborates with people to create results.",
+      "bestMatch": "ISFP Teto",
+      "bestMatchDesc": "Achieves harmony of leadership and creativity with ISFP Teto. Egen's drive and Teto's sensitivity complement each other.",
+      "worstMatch": "INFP Egen",
+      "worstMatchDesc": "May struggle with INFP Egen due to decision-making style differences. Egen's decisiveness can clash with INFP Egen's caution."
     },
     "ESTJ + 테토": {
-      "description": "Strong and practical, you are a realistic leader who leads organizations with clear goals and systematic methods while pursuing efficiency. In relationships, you prefer planned and stable relationships, valuing achieving practical results and development with your partner. You build relationships based on traditional values and realistic judgment, considering it important to provide stability and trust to your partner. With goal-oriented and responsible nature, you systematically design the future with your partner and are a trustworthy companion who increases relationship satisfaction through practical achievements.",
-      "bestMatch": "INFP + 에겐",
-      "bestMatchDesc": "The best match INFP + Egen creates perfect balance between their pure and idealistic emotions and your systematic nature.",
-      "worstMatch": "ISFP + 에겐",
-      "worstMatchDesc": "The worst match ISFP + Egen may clash with your systematic approach due to their overly free and flexible nature."
+      "description": "ESTJ Teto: A powerful and practical manager who leads organizations with clear goals and systematic methods while pursuing efficiency.",
+      "bestMatch": "INFP Teto",
+      "bestMatchDesc": "Creates balance of structure and flexibility with INFP Teto. Teto's systematic nature and Teto's adaptability complete each other.",
+      "worstMatch": "ISFP Egen",
+      "worstMatchDesc": "May clash with ISFP Egen due to work style differences. Teto's rule-focused approach can conflict with Egen's pursuit of autonomy."
     },
     "ESFP + 에겐": {
-      "description": "Lively and friendly, you are an emotional entertainer with a spontaneous and free spirit who brings joy and vitality to people around you. In relationships, you pursue natural and enjoyable relationships, loving to share various experiences with your partner and enjoy emotional connection. You provide warmth and fun to your partner with honest and intuitive emotional expression, injecting positive energy and vitality into relationships. You cherish the present moment and are a charming and warm lover who makes time with your partner as enjoyable and meaningful as possible.",
-      "bestMatch": "ISTJ + 테토",
-      "bestMatchDesc": "The best match ISTJ + Teto creates perfect balance between their systematic and stable nature and your free energy.",
-      "worstMatch": "INTJ + 에겐",
-      "worstMatchDesc": "The worst match INTJ + Egen may not align with your spontaneity due to their overly planned and independent nature."
+      "description": "ESFP Egen: A lively and friendly entertainer with a spontaneous and free spirit who brings joy and vitality to those around them.",
+      "bestMatch": "ISTJ Teto",
+      "bestMatchDesc": "Achieves perfect balance of freedom and stability with ISTJ Teto. Egen's creativity and Teto's systematic nature complement each other.",
+      "worstMatch": "INTJ Egen",
+      "worstMatchDesc": "May experience conflicts with INTJ Egen due to fundamental lifestyle differences. Egen's spontaneity can clash with INTJ Egen's planning nature."
     },
     "ESFP + 테토": {
-      "description": "Passionate and sociable, you are an action-oriented star of the stage who gains energy through interactions with people and creates positive atmospheres. In relationships, you pursue active and enjoyable relationships, developing relationships with your partner through various activities and experiences. You have rich and direct emotional expression, generously expressing warm interest and affection to your partner. You focus on the present while actively working for the future with your partner, being a dynamic and charming lover who pursues both fun and growth in relationships.",
-      "bestMatch": "INTJ + 테토",
-      "bestMatchDesc": "The best match INTJ + Teto creates perfect harmony between their deep thinking and planning and your warm emotions.",
-      "worstMatch": "ISTJ + 에겐",
-      "worstMatchDesc": "The worst match ISTJ + Egen may clash with your pursuit of change due to their overly cautious and conservative nature."
+      "description": "ESFP Teto: A passionate and sociable star of the stage who gains energy through interactions with people and creates positive atmospheres.",
+      "bestMatch": "INTJ Teto",
+      "bestMatchDesc": "Achieves harmony of emotion and logic with INTJ Teto. Teto's warmth and Teto's deep thinking help each other grow.",
+      "worstMatch": "ISTJ Egen",
+      "worstMatchDesc": "May face difficulties with ISTJ Egen due to approach differences. Teto's pursuit of change can clash with Egen's pursuit of stability."
     },
     "ISTJ + 에겐": {
-      "description": "Sincere and responsible, you are an emotional manager who values tradition and order while creating steady and reliable results. In relationships, you pursue stable and lasting relationships, building relationships based on deep trust and devotion to your partner. You value traditional values and realistic approaches while never missing warm consideration and careful attention to your partner. Though you prefer stability over change, you are a trustworthy and warm lover who willingly makes efforts and dedicates for your loved one.",
-      "bestMatch": "ESFP + 테토",
-      "bestMatchDesc": "The best match ESFP + Teto creates perfect balance between their lively and creative energy and your stability.",
-      "worstMatch": "ENFP + 테토",
-      "worstMatchDesc": "The worst match ENFP + Teto may not align with your stability pursuit due to their overly change-oriented and free nature."
+      "description": "ISTJ Egen: A sincere and responsible manager who values tradition and order while creating steady and reliable results.",
+      "bestMatch": "ESFP Teto",
+      "bestMatchDesc": "Creates perfect combination of stability and vitality with ESFP Teto. Egen's reliability and Teto's creativity complete each other.",
+      "worstMatch": "ENFP Teto",
+      "worstMatchDesc": "May feel stressed with ENFP Teto due to lifestyle pattern differences. Egen's routine-focused nature can clash with Teto's pursuit of change."
     },
     "ISTJ + 테토": {
-      "description": "Cautious and systematic, you are a practical manager who values tradition and order while creating steady and reliable results. In relationships, you pursue stable and planned relationships, valuing systematic future design and realization with your partner. You have strong responsibility and trustworthy nature, considering it important to provide stability and confidence to your partner. Though you prefer stability over change, you work steadily and systematically for goal achievement and are a solid and trustworthy companion who achieves practical accomplishments with your partner.",
-      "bestMatch": "ESFP + 에겐",
-      "bestMatchDesc": "The best match ESFP + Egen creates perfect balance between their free and lively energy and your systematic nature.",
-      "worstMatch": "ENTP + 에겐",
-      "worstMatchDesc": "The worst match ENTP + Egen may clash with your stability pursuit due to their overly change-oriented and innovative nature."
+      "description": "ISTJ Teto: A systematic and diligent practitioner who consistently achieves stable results based on accuracy and efficiency.",
+      "bestMatch": "ESFP Egen",
+      "bestMatchDesc": "Finds balance between rules and freedom with ESFP Egen. Teto's systematic nature and Egen's spontaneity complement and help each other grow.",
+      "worstMatch": "ENFP Egen",
+      "worstMatchDesc": "May experience conflicts with ENFP Egen due to priority differences. Teto's planning nature can clash with Egen's spontaneity."
     },
     "INTP + 에겐": {
-      "description": "Creative and analytical, you are an original explorer with both logical thinking and emotional understanding. In relationships, you pursue both intellectual connection and emotional communication, wanting relationships based on deep conversation and understanding with your partner. Though independent and free-spirited, you show amazing affection and devotion when you receive true understanding and empathy. You explore new possibilities in relationships with creative and flexible thinking, being an intellectual and emotional lover who respects and encourages your partner's individuality and originality.",
-      "bestMatch": "ESFJ + 테토",
-      "bestMatchDesc": "The best match ESFJ + Teto creates perfect balance between their warm and systematic nature and your creative thinking.",
-      "worstMatch": "ESTJ + 테토",
-      "worstMatchDesc": "The worst match ESTJ + Teto may clash with your flexible thinking due to their overly rule-oriented and systematic nature."
+      "description": "INTP Egen: A curious and original thinker who explores complex theories and ideas while finding innovative solutions.",
+      "bestMatch": "ESFJ Teto",
+      "bestMatchDesc": "Achieves perfect balance of idealism and reality with ESFJ Teto. Egen's creative thinking and Teto's execution ability complete each other.",
+      "worstMatch": "ESTJ Teto",
+      "worstMatchDesc": "May clash with ESTJ Teto due to work approach differences. Egen's flexible thinking can conflict with Teto's rule-based approach."
     },
     "INTP + 테토": {
-      "description": "Logical and analytical, you are a practical explorer who solves complex problems through systematic thinking and creates new knowledge. In relationships, you pursue deep relationships based on intellectual connection and mutual growth, valuing steady development with your partner. Though independent and cautious, once you form trust, you show deep loyalty and devotion. You develop relationships through logical approaches and systematic planning, being a wise and trustworthy partner who supports your partner's intellectual growth and personal development.",
-      "bestMatch": "ESFJ + 에겐",
-      "bestMatchDesc": "The best match ESFJ + Egen creates perfect harmony between their warm and considerate nature and your logical thinking.",
-      "worstMatch": "ESTJ + 에겐",
-      "worstMatchDesc": "The worst match ESTJ + Egen may clash with your careful analysis due to their overly direct and hasty nature."
+      "description": "INTP Teto: A logical and analytical explorer who solves complex problems through systematic thinking and creates new knowledge.",
+      "bestMatch": "ESFJ Egen",
+      "bestMatchDesc": "Achieves harmony of logic and emotion with ESFJ Egen. Teto's analytical skills and Egen's warmth complement each other and create balance.",
+      "worstMatch": "ESTJ Egen",
+      "worstMatchDesc": "May face difficulties with ESTJ Egen due to decision-making style differences. Teto's careful analysis can clash with Egen's quick decisions."
     }
   },
   "questions": {
     "q1": {
-      "question": "When meeting new people, what kind of person are you?",
+      "question": "When meeting new people, do you?",
       "answers": {
         "a": "Approach first and start a conversation",
-        "b": "Wait for the other person to speak first"
+        "b": "Wait for others to talk to you",
+        "c": "Have deep conversations with just a few people",
+        "d": "Quietly observe and understand the atmosphere"
       }
     },
     "q2": {
-      "question": "How do you appear at parties?",
+      "question": "When a problem arises, your solution approach is?",
       "answers": {
-        "a": "Actively talk with many people and gain energy",
-        "b": "Have deep conversations with a few close friends"
+        "a": "Take immediate action",
+        "b": "Think thoroughly before deciding",
+        "c": "Seek advice from others",
+        "d": "Compare and analyze various methods"
       }
     },
     "q3": {
-      "question": "What's your style when handling work?",
+      "question": "Your ideal way to spend the weekend is?",
       "answers": {
-        "a": "Focus on concrete facts and details",
-        "b": "Look at the big picture and possibilities first"
+        "a": "Active outings with friends",
+        "b": "Alone time at home",
+        "c": "Time with family",
+        "d": "Learning new hobbies"
       }
     },
     "q4": {
-      "question": "When accepting new ideas:",
+      "question": "When making important decisions, what do you value most?",
       "answers": {
-        "a": "First consider if it's realistic and practical",
-        "b": "Get interested in creative and innovative possibilities"
+        "a": "Intuition and feelings",
+        "b": "Logical analysis",
+        "c": "Impact on others",
+        "d": "Past experience and data"
       }
     },
     "q5": {
-      "question": "When making decisions, you:",
+      "question": "When you're stressed, do you?",
       "answers": {
-        "a": "Value logical analysis and objective facts",
-        "b": "Prioritize people's emotions and values"
+        "a": "Relieve through exercise or activities",
+        "b": "Stay alone and organize thoughts",
+        "c": "Talk to close people",
+        "d": "Analyze the cause and find solutions"
       }
     },
     "q6": {
-      "question": "Your approach in conflict situations?",
+      "question": "Your role in team projects is?",
       "answers": {
-        "a": "Analyze the cause of the problem and find rational solutions",
-        "b": "First check the feelings of people involved and seek harmony"
+        "a": "Show leadership and lead the team",
+        "b": "Make plans and proceed systematically",
+        "c": "Coordinate team members' opinions",
+        "d": "Provide professional analysis and materials"
       }
     },
     "q7": {
-      "question": "When making plans, you:",
+      "question": "When adapting to new environments?",
       "answers": {
-        "a": "Create detailed schedules and proceed step by step",
-        "b": "Set only the general framework and adjust flexibly according to situations"
+        "a": "Adapt quickly and enjoy changes",
+        "b": "Adapt slowly and carefully",
+        "c": "Adapt together with others",
+        "d": "Collect information and prepare in advance"
       }
     },
     "q8": {
-      "question": "When working on something with a deadline:",
+      "question": "Your approach to conflict situations is?",
       "answers": {
-        "a": "Make plans in advance and complete it with time to spare",
-        "b": "Concentration and efficiency increase only when the deadline approaches"
+        "a": "Directly raise the issue",
+        "b": "Think over time then resolve",
+        "c": "Understand the other person's position first",
+        "d": "Find objective solutions"
       }
     },
     "q9": {
-      "question": "When planning a vacation:",
+      "question": "The life values you pursue are?",
       "answers": {
-        "a": "Reserve travel schedules and accommodations in advance",
-        "b": "Decide only the rough destination and make spontaneous decisions on site"
+        "a": "Free and dynamic life",
+        "b": "Stable and peaceful life",
+        "c": "Harmonious life with others",
+        "d": "Growing and developing life"
       }
     },
     "q10": {
-      "question": "Your coping method when stressed?",
+      "question": "Your perspective on the future is?",
       "answers": {
-        "a": "Have alone time and calmly organize your thoughts",
-        "b": "Meet with friends, talk, and release your feelings"
+        "a": "Future full of adventure and challenges",
+        "b": "Future achieved step by step as planned",
+        "c": "Future with precious people",
+        "d": "Future of continuous learning and growth"
       }
     }
   }
