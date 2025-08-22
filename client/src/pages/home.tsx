@@ -241,17 +241,17 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col" data-testid="app">
+    <div className="min-h-screen flex flex-col max-w-full overflow-x-hidden" data-testid="app">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b border-slate-200">
-        <div className="max-w-4xl mx-auto px-4 py-6">
-          <div className="flex items-center justify-center">
-            <div className="text-center">
-              <h1 className="text-2xl md:text-3xl font-bold text-slate-800" data-testid="text-app-title">
+      <header className="bg-white shadow-sm border-b border-slate-200 max-w-full overflow-x-hidden">
+        <div className="max-w-4xl mx-auto px-4 py-6 max-w-full overflow-x-hidden">
+          <div className="flex items-center justify-center max-w-full overflow-x-hidden">
+            <div className="text-center max-w-full overflow-x-hidden">
+              <h1 className="text-2xl md:text-3xl font-bold text-slate-800 break-all overflow-wrap-anywhere" data-testid="text-app-title">
                 <Brain className="inline text-primary mr-3" />
                 {t('common.appTitle')}
               </h1>
-              <p className="text-slate-600 mt-2" data-testid="text-app-subtitle">
+              <p className="text-slate-600 mt-2 break-all overflow-wrap-anywhere" data-testid="text-app-subtitle">
                 {t('common.appSubtitle')}
               </p>
             </div>
@@ -259,8 +259,8 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="flex-1 py-8">
-        <div className="max-w-4xl mx-auto px-4">
+      <main className="flex-1 py-8 max-w-full overflow-x-hidden">
+        <div className="max-w-4xl mx-auto px-4 max-w-full overflow-x-hidden">
           {isLoadingSharedResult && (
             <div className="text-center py-16">
               <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
@@ -299,13 +299,13 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-slate-200 mt-16">
-        <div className="max-w-4xl mx-auto px-4 py-8">
-          <div className="text-center text-slate-500">
-            <p className="mb-2" data-testid="text-copyright">
+      <footer className="bg-white border-t border-slate-200 mt-16 max-w-full overflow-x-hidden">
+        <div className="max-w-4xl mx-auto px-4 py-8 max-w-full overflow-x-hidden">
+          <div className="text-center text-slate-500 max-w-full overflow-x-hidden">
+            <p className="mb-2 break-all overflow-wrap-anywhere" data-testid="text-copyright">
               © 2024 {t('common.appTitle')}. All rights reserved.
             </p>
-            <p className="text-sm" data-testid="text-disclaimer">
+            <p className="text-sm break-all overflow-wrap-anywhere" data-testid="text-disclaimer">
               {t('common.disclaimer')}
             </p>
           </div>
