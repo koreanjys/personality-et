@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { useTranslation } from "react-i18next";
-import type { Question } from "@shared/schema";
+import type { Question } from "@/types";
 
 interface TestScreenProps {
   question: Question;

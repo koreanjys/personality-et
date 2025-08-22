@@ -8,7 +8,7 @@ import { LoadingScreen } from "@/components/loading-screen";
 import { ResultScreen } from "@/components/result-screen";
 import { questions, useLocalizedQuestions } from "@/lib/test-data";
 import { calculatePersonalityType, getResultDescription } from "@/lib/result-calculator";
-import type { Answer } from "@shared/schema";
+import type { Answer } from "@/types";
 
 type Screen = "welcome" | "test" | "loading" | "result";
 
@@ -94,9 +94,11 @@ export default function Home() {
   };
 
   const handleSelectOption = (option: "A" | "B") => {
+    const currentQuestion = localizedQuestions[currentQuestionIndex];
     const newAnswer: Answer = {
-      questionId: localizedQuestions[currentQuestionIndex].id,
-      selectedOption: option
+      questionId: currentQuestion.id,
+      selectedOption: option,
+      dimension: currentQuestion.type
     };
 
     const newAnswers = [...answers, newAnswer];

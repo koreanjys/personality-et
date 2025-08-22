@@ -1,4 +1,4 @@
-import type { Question } from "@shared/schema";
+import type { Question } from "@/types";
 import { useTranslation } from "react-i18next";
 
 // Static Korean questions for backward compatibility

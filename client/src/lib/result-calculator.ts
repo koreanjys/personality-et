@@ -1,5 +1,5 @@
 
-import type { Answer } from "@shared/schema";
+import type { Answer } from "@/types";
 
 export interface ResultDescription {
   description: string;

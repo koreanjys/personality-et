@@ -1,4 +1,4 @@
-import type { Question } from "@shared/schema";
+import type { Question } from "@/types";
 
 export const questions: Question[] = [
   {

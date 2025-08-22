@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { User, Heart, X, Share, RotateCcw, Download } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import type { ResultDescription } from "@shared/schema";
+import type { ResultDescription } from "@/types";
 
 interface ResultScreenProps {
   personalityType: string;
