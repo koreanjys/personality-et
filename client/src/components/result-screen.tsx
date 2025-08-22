@@ -35,9 +35,14 @@ export function ResultScreen({
 
   // 캐릭터명 번역 함수
   const translateCharacterName = (text: string) => {
+    if (!text) return text;
+    
+    // 현재 언어에 따라 캐릭터명 번역
     return text
       .replace(/에겐/g, t('characters.에겐'))
-      .replace(/테토/g, t('characters.테토'));
+      .replace(/테토/g, t('characters.테토'))
+      .replace(/Egen/g, t('characters.에겐'))
+      .replace(/Teto/g, t('characters.테토'));
   };
 
   // 성격 유형 이름에서 캐릭터명 번역

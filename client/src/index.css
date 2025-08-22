@@ -7,8 +7,7 @@
 @layer base {
   * {
     word-wrap: break-word;
-    overflow-wrap: anywhere;
-    word-break: break-word;
+    overflow-wrap: break-word;
     hyphens: auto;
   }
   
@@ -17,12 +16,12 @@
     max-width: 100vw;
   }
   
-  /* 모든 컨테이너 요소에 대한 강제 제약 */
+  /* 모든 컨테이너 요소에 대한 적절한 제약 */
   div, span, p, h1, h2, h3, h4, h5, h6 {
     max-width: 100%;
     word-wrap: break-word;
-    overflow-wrap: anywhere;
-    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
 }
 
