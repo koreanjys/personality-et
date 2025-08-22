@@ -40,7 +40,7 @@ export function TestScreen({
             <span className="text-primary font-semibold text-base md:text-lg truncate block" data-testid="text-question-number">
               {t('test.questionNumber', { number: currentQuestionIndex + 1 })}
             </span>
-            <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-slate-800 mt-3 md:mt-4 mb-6 md:mb-8 leading-relaxed px-2 max-w-full break-words hyphens-auto" data-testid="text-question">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-800 mt-3 md:mt-4 mb-6 md:mb-8 leading-relaxed px-2 max-w-full break-words hyphens-auto whitespace-normal" data-testid="text-question">
               {question.question}
             </h2>
           </div>
@@ -49,24 +49,24 @@ export function TestScreen({
             <Button
               onClick={() => onSelectOption("A")}
               variant="outline"
-              className="w-full p-3 md:p-6 text-left bg-slate-50 hover:bg-slate-100 rounded-xl transition-all duration-200 border-2 border-transparent hover:border-primary group h-auto min-h-[60px] max-w-full overflow-hidden"
+              className="w-full p-3 md:p-6 text-left bg-slate-50 hover:bg-slate-100 rounded-xl transition-all duration-200 border-2 border-transparent hover:border-primary group h-auto min-h-[60px] max-w-full"
               data-testid="button-option-a"
             >
               <div className="flex items-start w-full max-w-full">
                 <div className="w-4 h-4 md:w-6 md:h-6 rounded-full border-2 border-slate-300 group-hover:border-primary mr-3 md:mr-4 flex-shrink-0 mt-1"></div>
-                <span className="text-slate-800 font-medium text-left text-xs md:text-sm leading-relaxed break-words hyphens-auto flex-1 min-w-0 max-w-full">{question.optionA}</span>
+                <span className="text-slate-800 font-medium text-left text-sm md:text-base leading-relaxed break-words hyphens-auto flex-1 min-w-0 max-w-full whitespace-normal">{question.optionA}</span>
               </div>
             </Button>
             
             <Button
               onClick={() => onSelectOption("B")}
               variant="outline"
-              className="w-full p-3 md:p-6 text-left bg-slate-50 hover:bg-slate-100 rounded-xl transition-all duration-200 border-2 border-transparent hover:border-primary group h-auto min-h-[60px] max-w-full overflow-hidden"
+              className="w-full p-3 md:p-6 text-left bg-slate-50 hover:bg-slate-100 rounded-xl transition-all duration-200 border-2 border-transparent hover:border-primary group h-auto min-h-[60px] max-w-full"
               data-testid="button-option-b"
             >
               <div className="flex items-start w-full max-w-full">
                 <div className="w-4 h-4 md:w-6 md:h-6 rounded-full border-2 border-slate-300 group-hover:border-primary mr-3 md:mr-4 flex-shrink-0 mt-1"></div>
-                <span className="text-slate-800 font-medium text-left text-xs md:text-sm leading-relaxed break-words hyphens-auto flex-1 min-w-0 max-w-full">{question.optionB}</span>
+                <span className="text-slate-800 font-medium text-left text-sm md:text-base leading-relaxed break-words hyphens-auto flex-1 min-w-0 max-w-full whitespace-normal">{question.optionB}</span>
               </div>
             </Button>
           </div>
