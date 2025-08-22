@@ -23,6 +23,9 @@ export function ResultScreen({
 }: ResultScreenProps) {
   const { t } = useTranslation();
 
+  // 모바일 기기 감지
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
   // 번역 키 생성 (현재 personalities 객체의 키 형식에 맞춤)
   const personalityKey = personalityType; // "ENFJ + 테토" 형식 그대로 사용
   
@@ -160,7 +163,7 @@ export function ResultScreen({
               data-testid="button-download-result"
             >
               <Download className="mr-2" />
-              {t('result.downloadButton')}
+              {isMobile ? '갤러리에 저장' : t('result.downloadButton')}
             </Button>
           </div>
         </CardContent>

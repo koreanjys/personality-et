@@ -213,14 +213,44 @@ export default function Home() {
         height: resultElement.scrollHeight,
       });
 
+      // 모바일 기기 감지
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      
       // 캔버스를 blob으로 변환
-      canvas.toBlob((blob) => {
+      canvas.toBlob(async (blob) => {
         if (blob) {
-          // 다운로드 링크 생성
+          const filename = `성향테스트_결과_${personalityType}_${new Date().getTime()}.png`;
+          
+          // 모바일에서 Web Share API 지원 시 사용 (갤러리 저장 가능)
+          if (isMobile && navigator.share && navigator.canShare) {
+            try {
+              const file = new File([blob], filename, { type: 'image/png' });
+              
+              if (navigator.canShare({ files: [file] })) {
+                await navigator.share({
+                  title: '성향 & 에겐-테토 궁합 테스트 결과',
+                  text: `내 성향은 ${personalityType}입니다!`,
+                  files: [file]
+                });
+                return;
+              }
+            } catch (shareError) {
+              console.log('Web Share API 실패, 다운로드로 대체:', shareError);
+              // 실패 시 아래 다운로드 로직으로 계속 진행
+            }
+          }
+
+          // 일반 다운로드 (데스크톱 또는 Web Share API 미지원 시)
           const url = URL.createObjectURL(blob);
           const link = document.createElement('a');
           link.href = url;
-          link.download = `성향테스트_결과_${personalityType}_${new Date().getTime()}.png`;
+          link.download = filename;
+          
+          // 모바일에서 갤러리 저장을 위한 추가 속성
+          if (isMobile) {
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+          }
           
           // 다운로드 실행
           document.body.appendChild(link);
@@ -230,7 +260,12 @@ export default function Home() {
           // 메모리 해제
           URL.revokeObjectURL(url);
           
-          alert('결과가 이미지로 저장되었습니다!');
+          // 사용자에게 안내 메시지
+          if (isMobile) {
+            alert('이미지가 저장되었습니다! 브라우저의 다운로드 폴더에서 확인하거나, 갤러리 앱에서 "다운로드" 폴더를 확인해주세요.');
+          } else {
+            alert('결과가 이미지로 저장되었습니다!');
+          }
         }
       }, 'image/png');
       
