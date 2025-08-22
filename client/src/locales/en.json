@@ -49,6 +49,7 @@
     "worstMatch": "Worst Match",
     "shareButton": "Share Result",
     "downloadButton": "Save Result",
+    "downloadButtonMobile": "Save to Photos",
     "restartButton": "Restart Test",
     "shareText": "My personality test result: {{type}}! Take the test yourself! #PersonalityTest #EgenTeto"
   },

@@ -49,6 +49,7 @@
     "worstMatch": "최악의 궁합",
     "shareButton": "결과 공유하기",
     "downloadButton": "결과 저장하기",
+    "downloadButtonMobile": "사진첩에 저장",
     "restartButton": "다시 테스트하기",
     "shareText": "나의 성향 테스트 결과: {{type}}! 당신도 테스트해보세요! #성향테스트 #에겐테토"
   },
