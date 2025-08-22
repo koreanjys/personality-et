@@ -172,6 +172,9 @@ Examples:
 - **`client/public/sitemap.xml`**: 모든 성격 유형 URL 포함
 - **`client/public/robots.txt`**: 크롤러 접근 설정
 
+## 꼭 해야할것
+프로젝트에 수정이 있다면 claude.md도 수정해야하는지 확인하고 수정할 부분이 있으면 수정하기
+
 ## "절대 건드리지 마시오" 목록 (업데이트됨)
 
 ### 🚨 변경 금지 사항

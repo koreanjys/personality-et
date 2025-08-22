@@ -21,9 +21,9 @@ export function TestScreen({
   const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
 
   return (
-    <div data-testid="test-screen">
+    <div data-testid="test-screen" className="overflow-hidden">
       {/* Progress bar */}
-      <div className="mb-8">
+      <div className="mb-8 px-4">
         <div className="flex justify-between items-center mb-2">
           <span className="text-sm font-medium text-slate-600">{t('test.progressLabel', '진행률')}</span>
           <span className="text-sm font-medium text-primary" data-testid="text-progress">
@@ -45,28 +45,28 @@ export function TestScreen({
             </h2>
           </div>
           
-          <div className="space-y-4 max-w-2xl mx-auto">
+          <div className="space-y-4 max-w-2xl mx-auto px-4">
             <Button
               onClick={() => onSelectOption("A")}
               variant="outline"
-              className="w-full p-4 md:p-6 text-left bg-slate-50 hover:bg-slate-100 rounded-xl transition-all duration-200 border-2 border-transparent hover:border-primary group h-auto min-h-[60px]"
+              className="w-full p-3 md:p-6 text-left bg-slate-50 hover:bg-slate-100 rounded-xl transition-all duration-200 border-2 border-transparent hover:border-primary group h-auto min-h-[60px]"
               data-testid="button-option-a"
             >
-              <div className="flex items-start">
-                <div className="w-5 h-5 md:w-6 md:h-6 rounded-full border-2 border-slate-300 group-hover:border-primary mr-3 md:mr-4 flex-shrink-0 mt-0.5"></div>
-                <span className="text-slate-800 font-medium text-left text-sm md:text-base leading-relaxed break-words">{question.optionA}</span>
+              <div className="flex items-start w-full">
+                <div className="w-4 h-4 md:w-6 md:h-6 rounded-full border-2 border-slate-300 group-hover:border-primary mr-3 md:mr-4 flex-shrink-0 mt-1"></div>
+                <span className="text-slate-800 font-medium text-left text-sm md:text-base leading-relaxed break-all overflow-wrap-anywhere flex-1 min-w-0">{question.optionA}</span>
               </div>
             </Button>
             
             <Button
               onClick={() => onSelectOption("B")}
               variant="outline"
-              className="w-full p-4 md:p-6 text-left bg-slate-50 hover:bg-slate-100 rounded-xl transition-all duration-200 border-2 border-transparent hover:border-primary group h-auto min-h-[60px]"
+              className="w-full p-3 md:p-6 text-left bg-slate-50 hover:bg-slate-100 rounded-xl transition-all duration-200 border-2 border-transparent hover:border-primary group h-auto min-h-[60px]"
               data-testid="button-option-b"
             >
-              <div className="flex items-start">
-                <div className="w-5 h-5 md:w-6 md:h-6 rounded-full border-2 border-slate-300 group-hover:border-primary mr-3 md:mr-4 flex-shrink-0 mt-0.5"></div>
-                <span className="text-slate-800 font-medium text-left text-sm md:text-base leading-relaxed break-words">{question.optionB}</span>
+              <div className="flex items-start w-full">
+                <div className="w-4 h-4 md:w-6 md:h-6 rounded-full border-2 border-slate-300 group-hover:border-primary mr-3 md:mr-4 flex-shrink-0 mt-1"></div>
+                <span className="text-slate-800 font-medium text-left text-sm md:text-base leading-relaxed break-all overflow-wrap-anywhere flex-1 min-w-0">{question.optionB}</span>
               </div>
             </Button>
           </div>
