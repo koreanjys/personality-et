@@ -163,7 +163,7 @@ export function ResultScreen({
               data-testid="button-download-result"
             >
               <Download className="mr-2" />
-              {isMobile ? '갤러리에 저장' : t('result.downloadButton')}
+              {isMobile ? '사진첩에 저장' : t('result.downloadButton')}
             </Button>
           </div>
         </CardContent>

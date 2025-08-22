@@ -221,36 +221,79 @@ export default function Home() {
         if (blob) {
           const filename = `성향테스트_결과_${personalityType}_${new Date().getTime()}.png`;
           
-          // 모바일에서 Web Share API 지원 시 사용 (갤러리 저장 가능)
-          if (isMobile && navigator.share && navigator.canShare) {
+          // 모바일에서 갤러리 저장 시도
+          if (isMobile) {
             try {
-              const file = new File([blob], filename, { type: 'image/png' });
-              
-              if (navigator.canShare({ files: [file] })) {
-                await navigator.share({
-                  title: '성향 & 에겐-테토 궁합 테스트 결과',
-                  text: `내 성향은 ${personalityType}입니다!`,
-                  files: [file]
+              // ClipboardAPI를 사용하여 이미지를 클립보드에 복사
+              if (navigator.clipboard && window.ClipboardItem) {
+                const clipboardItem = new ClipboardItem({
+                  'image/png': blob
                 });
+                await navigator.clipboard.write([clipboardItem]);
+                
+                alert('이미지가 클립보드에 복사되었습니다!\n\n사진첩에 저장하려면:\n1. 사진 앱을 열어주세요\n2. 새 사진 만들기 또는 붙여넣기를 선택해주세요\n3. 클립보드의 이미지가 갤러리에 저장됩니다');
                 return;
               }
-            } catch (shareError) {
-              console.log('Web Share API 실패, 다운로드로 대체:', shareError);
-              // 실패 시 아래 다운로드 로직으로 계속 진행
+              
+              // ClipboardAPI가 지원되지 않는 경우, 이미지를 새 탭에 열기
+              const imageUrl = URL.createObjectURL(blob);
+              const newWindow = window.open('', '_blank');
+              
+              if (newWindow) {
+                newWindow.document.write(`
+                  <html>
+                    <head>
+                      <title>테스트 결과 - 길게 눌러서 저장하세요</title>
+                      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                      <style>
+                        body { 
+                          margin: 0; 
+                          padding: 20px; 
+                          background: #f0f0f0; 
+                          text-align: center;
+                          font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+                        }
+                        .instructions {
+                          background: #fff;
+                          padding: 15px;
+                          border-radius: 10px;
+                          margin-bottom: 20px;
+                          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                        }
+                        img { 
+                          max-width: 100%; 
+                          height: auto; 
+                          border-radius: 10px;
+                          box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+                        }
+                      </style>
+                    </head>
+                    <body>
+                      <div class="instructions">
+                        <h3>📱 사진첩에 저장하기</h3>
+                        <p>아래 이미지를 <strong>길게 눌러서</strong> "이미지 저장" 또는 "사진에 저장"을 선택해주세요</p>
+                      </div>
+                      <img src="${imageUrl}" alt="성향 테스트 결과" />
+                    </body>
+                  </html>
+                `);
+                newWindow.document.close();
+                
+                // 메모리 해제를 위한 타임아웃
+                setTimeout(() => URL.revokeObjectURL(imageUrl), 60000);
+                return;
+              }
+              
+            } catch (mobileError) {
+              console.log('모바일 갤러리 저장 실패, 다운로드로 대체:', mobileError);
             }
           }
 
-          // 일반 다운로드 (데스크톱 또는 Web Share API 미지원 시)
+          // 일반 다운로드 (데스크톱 또는 모바일 갤러리 저장 실패 시)
           const url = URL.createObjectURL(blob);
           const link = document.createElement('a');
           link.href = url;
           link.download = filename;
-          
-          // 모바일에서 갤러리 저장을 위한 추가 속성
-          if (isMobile) {
-            link.target = '_blank';
-            link.rel = 'noopener noreferrer';
-          }
           
           // 다운로드 실행
           document.body.appendChild(link);
@@ -260,9 +303,8 @@ export default function Home() {
           // 메모리 해제
           URL.revokeObjectURL(url);
           
-          // 사용자에게 안내 메시지
           if (isMobile) {
-            alert('이미지가 저장되었습니다! 브라우저의 다운로드 폴더에서 확인하거나, 갤러리 앱에서 "다운로드" 폴더를 확인해주세요.');
+            alert('파일이 다운로드되었습니다.\n\n브라우저의 다운로드 폴더에서 파일을 찾아 갤러리로 이동시켜주세요.');
           } else {
             alert('결과가 이미지로 저장되었습니다!');
           }
