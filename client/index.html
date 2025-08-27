@@ -4,7 +4,127 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     
-    <!-- SEO Meta Tags -->
+    <!-- Dynamic Language Detection and Meta Tags Update -->
+    <script>
+      (function() {
+        // 브라우저 언어 감지
+        const browserLanguage = navigator.language || navigator.languages?.[0] || 'en';
+        const isKorean = browserLanguage.toLowerCase().startsWith('ko');
+        
+        // 언어에 따른 메타데이터 설정
+        const metadata = {
+          ko: {
+            htmlLang: 'ko',
+            title: '무료 성격 테스트 | MBTI 성향 & 에겐테토 궁합 테스트',
+            description: '무료 성격 테스트로 당신의 MBTI 성향을 알아보고 에겐-테토와의 궁합을 확인해보세요! 16가지 성격 유형별 상세 분석과 캐릭터 궁합도를 제공합니다.',
+            keywords: '성격테스트, MBTI테스트, 무료성격테스트, 성향테스트, 궁합테스트, 에겐테토, personality test, MBTI, free personality test',
+            ogLocale: 'ko_KR',
+            siteName: 'Personality Test',
+            structuredDataName: '성격 테스트 | Personality Test',
+            noscriptTitle: '무료 성격 테스트 | MBTI 성향 & 에겐테토 궁합 테스트',
+            noscriptDescription: '무료 성격 테스트로 당신의 MBTI 성향을 알아보고 에겐-테토와의 궁합을 확인해보세요!',
+            noscriptFeatures: [
+              '16가지 MBTI 성격 유형 분석',
+              '에겐-테토 캐릭터와의 궁합도 측정',
+              '상세한 성격 설명 및 특징',
+              '한국어/영어 다국어 지원',
+              '결과 공유 기능'
+            ],
+            noscriptJsRequired: '이 사이트는 JavaScript가 필요합니다. 브라우저에서 JavaScript를 활성화해주세요.'
+          },
+          en: {
+            htmlLang: 'en',
+            title: 'Free Personality Test | MBTI & Egen-Teto Compatibility Test',
+            description: 'Discover your MBTI personality type and check your compatibility with Egen-Teto characters! Get detailed analysis of 16 personality types and character compatibility ratings.',
+            keywords: 'personality test, MBTI test, free personality test, compatibility test, Egen Teto, 성격테스트, MBTI테스트, 무료성격테스트',
+            ogLocale: 'en_US',
+            siteName: 'Personality Test',
+            structuredDataName: 'Personality Test | 성격 테스트',
+            noscriptTitle: 'Free Personality Test | MBTI & Egen-Teto Compatibility Test',
+            noscriptDescription: 'Discover your MBTI personality type and check your compatibility with Egen-Teto characters!',
+            noscriptFeatures: [
+              '16 MBTI personality type analysis',
+              'Egen-Teto character compatibility measurement',
+              'Detailed personality descriptions and traits',
+              'Korean/English multilingual support',
+              'Result sharing functionality'
+            ],
+            noscriptJsRequired: 'This site requires JavaScript. Please enable JavaScript in your browser.'
+          }
+        };
+        
+        const currentMeta = isKorean ? metadata.ko : metadata.en;
+        
+        // HTML lang 속성 설정
+        document.documentElement.lang = currentMeta.htmlLang;
+        
+        // 메타 태그 동적 생성 함수
+        function createMetaTag(name, content, property = false) {
+          const meta = document.createElement('meta');
+          if (property) {
+            meta.setAttribute('property', name);
+          } else {
+            meta.setAttribute('name', name);
+          }
+          meta.setAttribute('content', content);
+          return meta;
+        }
+        
+        // 페이지 로드 후 메타 태그 업데이트
+        document.addEventListener('DOMContentLoaded', function() {
+          // Title 업데이트
+          document.title = currentMeta.title;
+          
+          // 기존 메타 태그들 제거
+          const existingMetas = document.querySelectorAll('meta[name="description"], meta[name="keywords"], meta[property="og:title"], meta[property="og:description"], meta[property="og:locale"], meta[name="twitter:title"], meta[name="twitter:description"]');
+          existingMetas.forEach(meta => meta.remove());
+          
+          // 새 메타 태그들 추가
+          const head = document.head;
+          head.appendChild(createMetaTag('description', currentMeta.description));
+          head.appendChild(createMetaTag('keywords', currentMeta.keywords));
+          head.appendChild(createMetaTag('og:title', currentMeta.title, true));
+          head.appendChild(createMetaTag('og:description', currentMeta.description, true));
+          head.appendChild(createMetaTag('og:locale', currentMeta.ogLocale, true));
+          head.appendChild(createMetaTag('twitter:title', currentMeta.title));
+          head.appendChild(createMetaTag('twitter:description', currentMeta.description));
+          
+          // Structured Data 업데이트
+          const structuredDataScripts = document.querySelectorAll('script[type="application/ld+json"]');
+          if (structuredDataScripts.length > 0) {
+            const webAppScript = structuredDataScripts[0];
+            try {
+              const data = JSON.parse(webAppScript.textContent);
+              data.name = currentMeta.structuredDataName;
+              data.description = currentMeta.description;
+              webAppScript.textContent = JSON.stringify(data, null, 2);
+            } catch (e) {
+              console.warn('Failed to update structured data:', e);
+            }
+          }
+          
+          // Noscript 콘텐츠 업데이트
+          const noscriptDiv = document.querySelector('noscript div');
+          if (noscriptDiv) {
+            const featuresHtml = currentMeta.noscriptFeatures.map(feature => `<li>${feature}</li>`).join('');
+            noscriptDiv.innerHTML = `
+              <h1>${currentMeta.noscriptTitle}</h1>
+              <p>${currentMeta.noscriptDescription}</p>
+              <p>${currentMeta.noscriptJsRequired}</p>
+              <h2>${isKorean ? '제공하는 기능:' : 'Features:'}</h2>
+              <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
+                ${featuresHtml}
+              </ul>
+            `;
+          }
+        });
+        
+        // 즉시 title 설정 (SEO를 위해)
+        document.title = currentMeta.title;
+      })();
+    </script>
+    
+    <!-- SEO Meta Tags - 기본값 (JavaScript로 업데이트됨) -->
     <title>무료 성격 테스트 | MBTI 성향 & 에겐테토 궁합 테스트</title>
     <meta name="description" content="무료 성격 테스트로 당신의 MBTI 성향을 알아보고 에겐-테토와의 궁합을 확인해보세요! 16가지 성격 유형별 상세 분석과 캐릭터 궁합도를 제공합니다." />
     <meta name="keywords" content="성격테스트, MBTI테스트, 무료성격테스트, 성향테스트, 궁합테스트, 에겐테토, personality test, MBTI, free personality test" />
@@ -12,7 +132,7 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://personality-et.jybr.me" />
     
-    <!-- Open Graph Meta Tags -->
+    <!-- Open Graph Meta Tags - 기본값 (JavaScript로 업데이트됨) -->
     <meta property="og:title" content="무료 성격 테스트 | MBTI 성향 & 에겐테토 궁합 테스트" />
     <meta property="og:description" content="무료 성격 테스트로 당신의 MBTI 성향을 알아보고 에겐-테토와의 궁합을 확인해보세요!" />
     <meta property="og:type" content="website" />
@@ -21,7 +141,7 @@
     <meta property="og:locale" content="ko_KR" />
     <meta property="og:locale:alternate" content="en_US" />
     
-    <!-- Twitter Card Meta Tags -->
+    <!-- Twitter Card Meta Tags - 기본값 (JavaScript로 업데이트됨) -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="무료 성격 테스트 | MBTI 성향 & 에겐테토 궁합 테스트" />
     <meta name="twitter:description" content="무료 성격 테스트로 당신의 MBTI 성향을 알아보고 에겐-테토와의 궁합을 확인해보세요!" />

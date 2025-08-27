@@ -8,6 +8,7 @@ import { LoadingScreen } from "@/components/loading-screen";
 import { ResultScreen } from "@/components/result-screen";
 import { questions, useLocalizedQuestions } from "@/lib/test-data";
 import { calculatePersonalityType, getResultDescription } from "@/lib/result-calculator";
+import { updateMetaData, generateResultMetaData, detectBrowserLanguage } from "@/lib/meta-utils";
 import type { Answer } from "@/types";
 
 type Screen = "welcome" | "test" | "loading" | "result";
@@ -27,6 +28,17 @@ export default function Home() {
     worstMatchDesc: ""
   });
   const [isLoadingSharedResult, setIsLoadingSharedResult] = useState(false);
+
+  // 결과 화면에서 메타데이터 업데이트
+  useEffect(() => {
+    if (currentScreen === "result" && personalityType) {
+      const isKorean = detectBrowserLanguage();
+      const metaData = generateResultMetaData(personalityType, isKorean);
+      updateMetaData(metaData);
+      
+      console.log(`메타데이터 업데이트됨 (${isKorean ? '한국어' : '영어'}):`, personalityType);
+    }
+  }, [currentScreen, personalityType]);
 
   // URL에서 공유된 결과 확인
   useEffect(() => {
