@@ -1,10 +1,16 @@
-# Personality & Egen-Teto Compatibility Test - Claude AI Guidelines
+# JYBR - Just Your Brain Report - Claude AI Guidelines
 
 ## 기술 스택
 - **Frontend Framework**: React 18.3 with TypeScript 5.6
 - **Build Tool**: Vite 5.4
 - **Styling**: Tailwind CSS 3.4 + tailwindcss-animate
-- **UI Components**: shadcn/ui (Radix UI primitives) - 최소한만 사용
+- **UI Components**: shadcn/ui (Radix### 🎯 브랜드 일관성 개선 완료 (업데이트됨)
+- **앱 제목 통일**: "JYBR - Just Your Brain Report"로 한/영 동일 적용
+- **컨셉 메시지 변경**: "성향" → "성격유형 + 에겐-테토" 컨셉으로 업데이트
+- **용어 통일**: "MBTI" → "성격유형"으로 프로젝트 전체 용어 통일
+- **다국어 동기화**: 한국어/영어 번역 파일 완전 동기화 완료
+- **사용자 인터페이스**: 웰컴 화면, 앱 부제목 모두 새로운 브랜딩 적용
+- **브랜드 일관성**: 모든 UI 텍스트에서 통일된 메시지 전달imitives) - 최소한만 사용
 - **Internationalization**: react-i18next 15.6
 - **Routing**: wouter 3.3 (가벼운 라우터)
 - **State Management**: React hooks (useState, useEffect)
@@ -134,7 +140,7 @@ npx shadcn-ui@latest add [component-name]
 
 ### 다국어 처리
 - **번역 키**: nested object 구조 사용 (`t('result.title')`)
-- **성격 유형 키 형식**: `"MBTI + 캐릭터"` (예: "ENFJ + 테토")
+- **성격 유형 키 형식**: `"성격유형 + 캐릭터"` (예: "ENFJ + 테토")
 - **번역 파일**: ko.json과 en.json 구조 일치 필수
 
 ## 저장소 에티켓
@@ -191,7 +197,7 @@ Examples:
 1. **성격 계산 로직 (`result-calculator.ts`)**
    - 32개 성격 유형 매핑 로직
    - 질문별 점수 계산 알고리즘
-   - personalityType 형식 ("MBTI + 캐릭터")
+   - personalityType 형식 ("성격유형 + 캐릭터")
 
 2. **번역 파일 키 구조**
    - `personalities` 객체의 키 형식 절대 변경 금지
@@ -200,7 +206,7 @@ Examples:
 
 3. **URL 공유 시스템**
    - `handleShareResult` 함수의 URL 생성 로직
-   - MBTI-character 형식의 URL 파라미터 구조
+   - 성격유형-character 형식의 URL 파라미터 구조
    - 기존 공유 링크 호환성 유지
 
 4. **Google AdSense 설정**
@@ -303,4 +309,4 @@ Examples:
 - **SEO 최적화**: 구글 크롤러 영어 수집, 사용자 브라우저 언어 동적 표시 완료 ✅
 
 ## 프로젝트 목표
-이 프로젝트는 **JYBR(Just Your Brain Report) - 무료 MBTI 성격 테스트와 에겐-테토 캐릭터 궁합 분석**을 제공하는 웹 애플리케이션입니다. "성격유형 + 에겐-테토" 컨셉으로 사용자 친화적인 UX, 정확한 다국어 지원, SEO 최적화를 통한 높은 접근성을 목표로 합니다.
+이 프로젝트는 **JYBR(Just Your Brain Report) - 무료 성격유형 테스트와 에겐-테토 캐릭터 궁합 분석**을 제공하는 웹 애플리케이션입니다. "성격유형 + 에겐-테토" 컨셉으로 사용자 친화적인 UX, 정확한 다국어 지원, SEO 최적화를 통한 높은 접근성을 목표로 합니다.

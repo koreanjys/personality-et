@@ -59,7 +59,7 @@ export default function Home() {
     const type = urlParams.get('type');
     
     if (resultId) {
-      // 결과 ID 형식 확인 (MBTI-character)
+      // 결과 ID 형식 확인 (성격유형-character)
       const match = resultId.match(/^([A-Z]{4})-(eigen|teto)$/);
       
       if (match) {
