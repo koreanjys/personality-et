@@ -1,7 +1,7 @@
 {
   "common": {
-    "appTitle": "Personality & Egen-Teto Compatibility Test",
-    "appSubtitle": "Discover your personality and find your compatibility with Egen-Teto!",
+    "appTitle": "JYBR - Just Your Brain Report",
+    "appSubtitle": "Check your personality type + Egen-Teto and find your compatibility!",
     "disclaimer": "This test is for fun and self-understanding. It does not replace professional psychological counseling.",
     "language": "Language",
     "korean": "한국어",
@@ -14,9 +14,9 @@
     "테토": "Teto"
   },
   "welcome": {
-    "title": "Personality & Egen-Teto Compatibility Test",
-    "subtitle": "Discover your personality and check your compatibility with Egen-Teto!",
-    "description": "A fun test that analyzes your personality through simple questions and discovers your compatibility with Egen-Teto characters.",
+    "title": "Personality Type + Egen-Teto Test",
+    "subtitle": "Check your personality type + Egen-Teto and find your compatibility!",
+    "description": "A fun test that checks your personality type + Egen-Teto through simple questions and discovers your compatibility.",
     "features": {
       "quick": "Quick Test",
       "quickDesc": "Simple questions in about 5 minutes",
