@@ -72,27 +72,27 @@ export function generateHomeMetaData(isKorean: boolean) {
   
   if (isKorean) {
     return {
-      title: '무료 성격 테스트 | MBTI 성향 & 에겐테토 궁합 테스트',
-      description: '무료 성격 테스트로 당신의 MBTI 성향을 알아보고 에겐-테토와의 궁합을 확인해보세요! 16가지 성격 유형별 상세 분석과 캐릭터 궁합도를 제공합니다.',
-      keywords: '무료성격테스트, MBTI테스트, 에겐테토, 궁합테스트, 성향분석, 16personalities',
-      ogTitle: '무료 성격 테스트 | MBTI 성향 & 에겐테토 궁합 테스트',
-      ogDescription: '무료 성격 테스트로 당신의 MBTI 성향을 알아보고 에겐-테토와의 궁합을 확인해보세요!',
+      title: '무료 성격 테스트 | 성격유형 성향 & 에겐테토 궁합 테스트',
+      description: '무료 성격 테스트로 당신의 성격유형 성향을 알아보고 에겐-테토와의 궁합을 확인해보세요! 16가지 성격 유형별 상세 분석과 캐릭터 궁합도를 제공합니다.',
+      keywords: '무료성격테스트, 성격유형테스트, 에겐테토, 궁합테스트, 성향분석, 16personalities',
+      ogTitle: '무료 성격 테스트 | 성격유형 성향 & 에겐테토 궁합 테스트',
+      ogDescription: '무료 성격 테스트로 당신의 성격유형 성향을 알아보고 에겐-테토와의 궁합을 확인해보세요!',
       ogUrl: baseUrl,
       ogLocale: 'ko_KR',
-      twitterTitle: '무료 성격 테스트 | MBTI & 에겐테토 궁합',
-      twitterDescription: '나의 MBTI 성향과 에겐-테토 캐릭터와의 궁합을 무료로 확인해보세요!'
+      twitterTitle: '무료 성격 테스트 | 성격유형 & 에겐테토 궁합',
+      twitterDescription: '나의 성격유형 성향과 에겐-테토 캐릭터와의 궁합을 무료로 확인해보세요!'
     };
   } else {
     return {
-      title: 'Free Personality Test | MBTI & Egen-Teto Compatibility Test',
-      description: 'Discover your MBTI personality type and check your compatibility with Egen-Teto characters! Get detailed analysis of 16 personality types and character compatibility ratings.',
-      keywords: 'free personality test, MBTI test, Egen Teto, compatibility test, personality analysis, 16personalities',
-      ogTitle: 'Free Personality Test | MBTI & Egen-Teto Compatibility Test',
-      ogDescription: 'Discover your MBTI personality type and check your compatibility with Egen-Teto characters!',
+      title: 'Free Personality Test | Personality Type & Egen-Teto Compatibility Test',
+      description: 'Discover your personality type and check your compatibility with Egen-Teto characters! Get detailed analysis of 16 personality types and character compatibility ratings.',
+      keywords: 'free personality test, personality type test, Egen Teto, compatibility test, personality analysis, 16personalities',
+      ogTitle: 'Free Personality Test | Personality Type & Egen-Teto Compatibility Test',
+      ogDescription: 'Discover your personality type and check your compatibility with Egen-Teto characters!',
       ogUrl: baseUrl,
       ogLocale: 'en_US',
-      twitterTitle: 'Free Personality Test | MBTI & Egen-Teto',
-      twitterDescription: 'Discover your MBTI personality and compatibility with Egen-Teto characters for free!'
+      twitterTitle: 'Free Personality Test | Personality Type & Egen-Teto',
+      twitterDescription: 'Discover your personality type and compatibility with Egen-Teto characters for free!'
     };
   }
 }
