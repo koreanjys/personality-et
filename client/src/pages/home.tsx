@@ -8,13 +8,13 @@ import { LoadingScreen } from "@/components/loading-screen";
 import { ResultScreen } from "@/components/result-screen";
 import { questions, useLocalizedQuestions } from "@/lib/test-data";
 import { calculatePersonalityType, getResultDescription } from "@/lib/result-calculator";
-import { updateMetaData, generateResultMetaData, detectBrowserLanguage } from "@/lib/meta-utils";
+import { updateMetaData, generateResultMetaData, generateHomeMetaData, detectBrowserLanguage, isCurrentLanguageKorean } from "@/lib/meta-utils";
 import type { Answer } from "@/types";
 
 type Screen = "welcome" | "test" | "loading" | "result";
 
 export default function Home() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const localizedQuestions = useLocalizedQuestions();
   const [currentScreen, setCurrentScreen] = useState<Screen>("welcome");
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -29,16 +29,27 @@ export default function Home() {
   });
   const [isLoadingSharedResult, setIsLoadingSharedResult] = useState(false);
 
-  // 결과 화면에서 메타데이터 업데이트
+  // 홈페이지에서 메타데이터 업데이트 (언어 변경 시에도 반응)
+  useEffect(() => {
+    if (currentScreen !== "result") {
+      const isKorean = isCurrentLanguageKorean(i18n.language);
+      const metaData = generateHomeMetaData(isKorean);
+      updateMetaData(metaData);
+      
+      console.log(`홈페이지 메타데이터 업데이트됨 (${isKorean ? '한국어' : '영어'})`);
+    }
+  }, [currentScreen, i18n.language]); // 홈페이지가 아닌 경우에만 실행
+
+  // 결과 화면에서 메타데이터 업데이트 (언어 변경 시에도 반응)
   useEffect(() => {
     if (currentScreen === "result" && personalityType) {
-      const isKorean = detectBrowserLanguage();
+      const isKorean = isCurrentLanguageKorean(i18n.language);
       const metaData = generateResultMetaData(personalityType, isKorean);
       updateMetaData(metaData);
       
       console.log(`메타데이터 업데이트됨 (${isKorean ? '한국어' : '영어'}):`, personalityType);
     }
-  }, [currentScreen, personalityType]);
+  }, [currentScreen, personalityType, i18n.language]); // i18n.language 의존성 추가
 
   // URL에서 공유된 결과 확인
   useEffect(() => {
