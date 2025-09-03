@@ -12,6 +12,24 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jybr.me/" />
   </url>
   
+  <!-- Policy Pages -->
+  <url>
+    <loc>https://jybr.me/privacy-policy</loc>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jybr.me/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jybr.me/privacy-policy" />
+  </url>
+  <url>
+    <loc>https://jybr.me/terms-of-service</loc>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jybr.me/terms-of-service" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jybr.me/terms-of-service" />
+  </url>
+  
   <!-- Result Pages - INTJ -->
   <url>
     <loc>https://jybr.me/?id=INTJ-eigen</loc>

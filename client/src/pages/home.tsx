@@ -421,8 +421,25 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 py-8 max-w-full overflow-x-hidden">
           <div className="text-center text-slate-500 max-w-full overflow-x-hidden">
             <p className="mb-2 break-all overflow-wrap-anywhere" data-testid="text-copyright">
-              © 2024 {t('common.appTitle')}. All rights reserved.
+              © 2025 {t('common.appTitle')}. All rights reserved.
             </p>
+            <div className="flex justify-center gap-4 mb-4 text-sm">
+              <a 
+                href="/privacy-policy" 
+                className="text-blue-600 hover:text-blue-800 hover:underline"
+                data-testid="link-privacy-policy"
+              >
+                {t('privacy.title')}
+              </a>
+              <span className="text-slate-300">|</span>
+              <a 
+                href="/terms-of-service" 
+                className="text-blue-600 hover:text-blue-800 hover:underline"
+                data-testid="link-terms-of-service"
+              >
+                {t('terms.title')}
+              </a>
+            </div>
             <p className="text-sm break-all overflow-wrap-anywhere" data-testid="text-disclaimer">
               {t('common.disclaimer')}
             </p>

@@ -7,7 +7,8 @@
     "korean": "한국어",
     "english": "English",
     "startNewTest": "Start New Test",
-    "sharedResult": "Shared Result"
+    "sharedResult": "Shared Result",
+    "backHome": "Back to Home"
   },
   "characters": {
     "에겐": "Egen",
@@ -349,6 +350,76 @@
         "a": "Have alone time and calmly organize your thoughts",
         "b": "Meet with friends, talk, and release your feelings"
       }
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last Updated",
+    "dataCollection": {
+      "title": "Data Collection and Storage",
+      "noDataStored": "This website does not collect or store any personal information or test results",
+      "description": "JYBR is a completely static website that does not transmit or store user data on servers.",
+      "noPersonalInfo": "No collection of personal identification information such as name, email, phone number",
+      "noTestResults": "Personality test results are not stored on servers",
+      "noUserAccounts": "No user accounts or login systems",
+      "noTracking": "No user behavior tracking or analytics data collection"
+    },
+    "browserStorage": {
+      "title": "Browser Local Storage Usage",
+      "description": "We use browser local storage (localStorage) minimally to enhance user experience.",
+      "languagePreference": "Language setting (Korean/English) selection memory",
+      "localOnly": "This information is stored only on the user's device and is not transmitted externally",
+      "userControl": "Can be deleted anytime through browser settings"
+    },
+    "thirdParty": {
+      "title": "Third-Party Services",
+      "description": "We use the following third-party services for site operation:",
+      "googleAdsense": "Used for ad display and follows Google's Privacy Policy."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "If you have any questions or comments about this Privacy Policy, please feel free to contact us."
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last Updated",
+    "serviceDescription": {
+      "title": "Service Description",
+      "description": "JYBR is a static web application that provides free personality type testing and Egen-Teto character compatibility analysis.",
+      "features": {
+        "title": "Features provided:",
+        "personalityTest": "16 personality type analysis test",
+        "characterCompatibility": "Compatibility measurement with Egen-Teto characters",
+        "resultSharing": "Test result image saving and link sharing",
+        "multiLanguage": "Korean/English multilingual support"
+      }
+    },
+    "userResponsibilities": {
+      "title": "User Responsibilities",
+      "description": "Users of the service must comply with the following:",
+      "honestAnswers": "Answer test questions honestly and accurately",
+      "appropriateUse": "Use the service only for appropriate purposes",
+      "noHarmfulContent": "Prohibition of creating harmful or illegal content",
+      "respectOthers": "Respect for other users and the service"
+    },
+    "disclaimer": {
+      "title": "Disclaimer",
+      "notProfessional": "This test does not replace professional psychological counseling or medical diagnosis",
+      "description": "The JYBR personality type test is a tool for fun and self-understanding.",
+      "entertainmentPurpose": "Use only for entertainment and self-development purposes",
+      "noMedicalAdvice": "Do not interpret as medical advice or diagnosis",
+      "noGuarantee": "No guarantee of accuracy of test results",
+      "useAtOwnRisk": "All responsibility for using test results lies with the user"
+    },
+    "liability": {
+      "title": "Limitation of Liability",
+      "description": "JYBR is not responsible for any direct or indirect damages arising from the use of the service.",
+      "limitation": "The service is provided 'as is' and we do not guarantee completeness or accuracy."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "If you have any questions or comments about these Terms of Service, please feel free to contact us."
     }
   }
 }
