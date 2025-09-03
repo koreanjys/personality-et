@@ -29,6 +29,14 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://jybr.me/terms-of-service" />
     <xhtml:link rel="alternate" hreflang="en" href="https://jybr.me/terms-of-service" />
   </url>
+  <url>
+    <loc>https://jybr.me/personality-guide</loc>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jybr.me/personality-guide" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jybr.me/personality-guide" />
+  </url>
   
   <!-- Result Pages - INTJ -->
   <url>

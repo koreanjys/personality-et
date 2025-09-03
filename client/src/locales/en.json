@@ -27,7 +27,9 @@
       "funDesc": "Special compatibility with Egen-Teto"
     },
     "startButton": "Start Test",
-    "totalQuestions": "Total {{count}} questions"
+    "totalQuestions": "Total {{count}} questions",
+    "learnMore": "Want to learn more about personality types?",
+    "personalityGuideLink": "View 16 Personality Types Guide"
   },
   "test": {
     "progress": "{{current}} / {{total}}",
@@ -420,6 +422,152 @@
     "contact": {
       "title": "Contact",
       "description": "If you have any questions or comments about these Terms of Service, please feel free to contact us."
+    }
+  },
+  "personalityGuide": {
+    "title": "16 Personality Types Guide",
+    "description": "A detailed explanation of the 16 personality types based on Carl Jung's psychological theory. Learn about the characteristics, strengths, and suitable careers for each personality type.",
+    "features": {
+      "scientific": {
+        "title": "Scientific Basis",
+        "desc": "Validated theory based on psychological research"
+      },
+      "detailed": {
+        "title": "Detailed Analysis",
+        "desc": "Explanation of characteristics and behavioral patterns for each personality type"
+      },
+      "compatibility": {
+        "title": "Compatibility Analysis",
+        "desc": "Special compatibility measurement with Egen-Teto"
+      },
+      "practical": {
+        "title": "Practical Information",
+        "desc": "Career recommendations and real-life application tips"
+      }
+    },
+    "dimensions": {
+      "title": "Four Dimensions of Personality Types",
+      "extroversion": {
+        "title": "Extroversion vs Introversion (E/I)",
+        "desc": "Indicates how you gain energy and direct your attention. Extroverts gain energy from the external world, while introverts gain energy from their inner world."
+      },
+      "sensing": {
+        "title": "Sensing vs Intuition (S/N)",
+        "desc": "Indicates how you gather and process information. Sensing types focus on concrete facts, while intuitive types focus on possibilities and meanings."
+      },
+      "thinking": {
+        "title": "Thinking vs Feeling (T/F)",
+        "desc": "Indicates how you make decisions. Thinking types emphasize logic and objectivity, while feeling types emphasize values and harmony."
+      },
+      "judging": {
+        "title": "Judging vs Perceiving (J/P)",
+        "desc": "Indicates your attitude toward the external world. Judging types prefer planning and decisions, while perceiving types prefer flexibility and adaptation."
+      }
+    },
+    "types": {
+      "strengths": "Key Strengths",
+      "careers": "Suitable Careers",
+      "INTJ": {
+        "name": "Architect",
+        "description": "Independent and creative strategist. Enjoys having long-term vision and systematically achieving goals.",
+        "strengths": "Strategic thinking, independence, creativity, decisiveness",
+        "careers": "Scientist, engineer, architect, writer, consultant"
+      },
+      "INTP": {
+        "name": "Logician",
+        "description": "Logical and analytical thinker. Enjoys exploring complex theories and concepts while creating new ideas.",
+        "strengths": "Logical analysis, creativity, objectivity, problem-solving",
+        "careers": "Researcher, philosopher, mathematician, programmer, analyst"
+      },
+      "ENTJ": {
+        "name": "Commander",
+        "description": "Natural leader who enjoys leading people to achieve goals. Values efficiency and performance.",
+        "strengths": "Leadership, strategic planning, decisiveness, efficiency",
+        "careers": "CEO, manager, lawyer, politician, entrepreneur"
+      },
+      "ENTP": {
+        "name": "Debater",
+        "description": "Passionate and creative innovator. Enjoys exploring new possibilities and developing ideas.",
+        "strengths": "Creativity, adaptability, enthusiasm, innovation",
+        "careers": "Entrepreneur, marketer, journalist, inventor, consultant"
+      },
+      "INFJ": {
+        "name": "Advocate",
+        "description": "Idealistic and insightful inspirer. Seeks deep meaning and purpose while trying to help others.",
+        "strengths": "Insight, idealism, creativity, decisiveness",
+        "careers": "Counselor, writer, artist, teacher, psychologist"
+      },
+      "INFP": {
+        "name": "Mediator",
+        "description": "Idealistic and loyal mediator. Acts according to their values and seeks harmony.",
+        "strengths": "Idealism, loyalty, adaptability, creativity",
+        "careers": "Writer, artist, counselor, psychologist, social worker"
+      },
+      "ENFJ": {
+        "name": "Protagonist",
+        "description": "Charismatic and inspiring leader. Enjoys bringing out others' potential and helping them grow.",
+        "strengths": "Leadership, empathy, communication, inspiration",
+        "careers": "Teacher, counselor, coach, politician, religious leader"
+      },
+      "ENFP": {
+        "name": "Campaigner",
+        "description": "Passionate and creative free spirit. Enjoys finding new connections and possibilities.",
+        "strengths": "Enthusiasm, creativity, sociability, inspiration",
+        "careers": "Artist, counselor, journalist, marketer, teacher"
+      },
+      "ISTJ": {
+        "name": "Logistician",
+        "description": "Practical and fact-based reliable person. Handles work systematically and responsibly.",
+        "strengths": "Reliability, responsibility, organization, perseverance",
+        "careers": "Accountant, manager, doctor, lawyer, engineer"
+      },
+      "ISFJ": {
+        "name": "Defender",
+        "description": "Warm and dedicated protector. Values helping others and creating harmonious environments.",
+        "strengths": "Consideration, responsibility, cooperation, attention to detail",
+        "careers": "Nurse, teacher, social worker, counselor, healthcare worker"
+      },
+      "ESTJ": {
+        "name": "Executive",
+        "description": "Practical and fact-based manager. Enjoys efficiently managing organizations and people.",
+        "strengths": "Leadership, organization, efficiency, decisiveness",
+        "careers": "Manager, military officer, judge, executive, civil servant"
+      },
+      "ESFJ": {
+        "name": "Consul",
+        "description": "Outgoing and friendly helper. Values helping others and maintaining harmonious relationships.",
+        "strengths": "Sociability, cooperation, consideration, responsibility",
+        "careers": "Teacher, nurse, counselor, sales representative, event planner"
+      },
+      "ISTP": {
+        "name": "Virtuoso",
+        "description": "Practical and adaptable explorer. Enjoys making things by hand and solving problems.",
+        "strengths": "Practicality, adaptability, problem-solving, logic",
+        "careers": "Engineer, technician, athlete, pilot, healthcare worker"
+      },
+      "ISFP": {
+        "name": "Adventurer",
+        "description": "Flexible and charming artist. Values their principles and seeks harmony and beauty.",
+        "strengths": "Artistry, flexibility, consideration, adaptability",
+        "careers": "Artist, designer, musician, counselor, chef"
+      },
+      "ESTP": {
+        "name": "Entrepreneur",
+        "description": "Active and realistic doer. Enjoys solving problems on the spot and experiencing new things.",
+        "strengths": "Adaptability, practicality, sociability, action-oriented",
+        "careers": "Sales representative, athlete, entrepreneur, emergency medical technician, entertainer"
+      },
+      "ESFP": {
+        "name": "Entertainer",
+        "description": "Outgoing and friendly entertainer. Enjoys being with people and brightening the atmosphere.",
+        "strengths": "Sociability, enthusiasm, flexibility, optimism",
+        "careers": "Entertainer, teacher, counselor, event planner, sales representative"
+      }
+    },
+    "conclusion": {
+      "title": "Find Your Personality Type",
+      "description": "Curious about which of the 16 personality types best matches you? Discover your personality type through the JYBR personality test and check your special compatibility with Egen-Teto!",
+      "startTest": "Start Personality Test"
     }
   }
 }

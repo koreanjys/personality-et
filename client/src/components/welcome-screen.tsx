@@ -60,6 +60,19 @@ export function WelcomeScreen({ onStartTest }: WelcomeScreenProps) {
             <Clock className="inline mr-1" />
             {t('welcome.totalQuestions', { count: 10 })}
           </p>
+
+          <div className="mt-6 pt-6 border-t border-slate-200">
+            <p className="text-sm text-slate-600 mb-3">
+              {t('welcome.learnMore')}
+            </p>
+            <a 
+              href="/personality-guide" 
+              className="text-blue-600 hover:text-blue-800 hover:underline text-sm font-medium"
+              data-testid="link-personality-guide"
+            >
+              {t('welcome.personalityGuideLink')} →
+            </a>
+          </div>
         </CardContent>
       </Card>
     </div>
