@@ -1,3 +1,11 @@
 # Google Search Console Verification
 # 구글 서치 콘솔에서 사이트 소유권 확인을 위한 파일입니다.
-# 실제 서치 콘솔 등록 시 구글에서 제공하는 파일로 교체해야 합니다.
+# 
+# 설정 방법:
+# 1. https://search.google.com/search-console 접속
+# 2. 속성 추가 → URL 접두어 → https://jybr.me 입력
+# 3. HTML 파일 업로드 방법 선택
+# 4. 제공받은 파일로 이 파일을 교체
+# 5. 소유권 확인 완료
+#
+# 현재 상태: 미설정 (서치 콘솔 등록 필요)

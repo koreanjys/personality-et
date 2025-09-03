@@ -5,7 +5,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://jybr.me/</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jybr.me/" />
@@ -15,13 +15,13 @@
   <!-- Result Pages - INTJ -->
   <url>
     <loc>https://jybr.me/?id=INTJ-eigen</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jybr.me/?id=INTJ-teto</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -29,13 +29,13 @@
   <!-- Result Pages - INTP -->
   <url>
     <loc>https://jybr.me/?id=INTP-eigen</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jybr.me/?id=INTP-teto</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -43,13 +43,13 @@
   <!-- Result Pages - ENTJ -->
   <url>
     <loc>https://jybr.me/?id=ENTJ-eigen</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jybr.me/?id=ENTJ-teto</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -57,13 +57,13 @@
   <!-- Result Pages - ENTP -->
   <url>
     <loc>https://jybr.me/?id=ENTP-eigen</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jybr.me/?id=ENTP-teto</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -71,13 +71,13 @@
   <!-- Result Pages - INFJ -->
   <url>
     <loc>https://jybr.me/?id=INFJ-eigen</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jybr.me/?id=INFJ-teto</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -85,13 +85,13 @@
   <!-- Result Pages - INFP -->
   <url>
     <loc>https://jybr.me/?id=INFP-eigen</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jybr.me/?id=INFP-teto</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -99,13 +99,13 @@
   <!-- Result Pages - ENFJ -->
   <url>
     <loc>https://jybr.me/?id=ENFJ-eigen</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jybr.me/?id=ENFJ-teto</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -113,13 +113,13 @@
   <!-- Result Pages - ENFP -->
   <url>
     <loc>https://jybr.me/?id=ENFP-eigen</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jybr.me/?id=ENFP-teto</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -127,13 +127,13 @@
   <!-- Result Pages - ISTJ -->
   <url>
     <loc>https://jybr.me/?id=ISTJ-eigen</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jybr.me/?id=ISTJ-teto</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -141,13 +141,13 @@
   <!-- Result Pages - ISFJ -->
   <url>
     <loc>https://jybr.me/?id=ISFJ-eigen</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jybr.me/?id=ISFJ-teto</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -155,13 +155,13 @@
   <!-- Result Pages - ESTJ -->
   <url>
     <loc>https://jybr.me/?id=ESTJ-eigen</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jybr.me/?id=ESTJ-teto</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -169,13 +169,13 @@
   <!-- Result Pages - ESFJ -->
   <url>
     <loc>https://jybr.me/?id=ESFJ-eigen</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jybr.me/?id=ESFJ-teto</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -183,13 +183,13 @@
   <!-- Result Pages - ISTP -->
   <url>
     <loc>https://jybr.me/?id=ISTP-eigen</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jybr.me/?id=ISTP-teto</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -197,13 +197,13 @@
   <!-- Result Pages - ISFP -->
   <url>
     <loc>https://jybr.me/?id=ISFP-eigen</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jybr.me/?id=ISFP-teto</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -211,13 +211,13 @@
   <!-- Result Pages - ESTP -->
   <url>
     <loc>https://jybr.me/?id=ESTP-eigen</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jybr.me/?id=ESTP-teto</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -225,13 +225,13 @@
   <!-- Result Pages - ESFP -->
   <url>
     <loc>https://jybr.me/?id=ESFP-eigen</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jybr.me/?id=ESFP-teto</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
