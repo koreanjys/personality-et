@@ -156,7 +156,7 @@ export default function PersonalityGuide() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
               <div className="text-center">
                 <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
                   <Brain className="text-blue-600 w-8 h-8" />
@@ -170,13 +170,6 @@ export default function PersonalityGuide() {
                 </div>
                 <h3 className="font-semibold text-slate-800 mb-2">{t('personalityGuide.features.detailed.title')}</h3>
                 <p className="text-sm text-slate-600">{t('personalityGuide.features.detailed.desc')}</p>
-              </div>
-              <div className="text-center">
-                <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
-                  <Heart className="text-purple-600 w-8 h-8" />
-                </div>
-                <h3 className="font-semibold text-slate-800 mb-2">{t('personalityGuide.features.compatibility.title')}</h3>
-                <p className="text-sm text-slate-600">{t('personalityGuide.features.compatibility.desc')}</p>
               </div>
               <div className="text-center">
                 <div className="bg-orange-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
