@@ -16,7 +16,7 @@ const LanguageSwitcher: React.FC = () => {
       variant="outline"
       size="sm"
       onClick={toggleLanguage}
-      className="fixed top-4 right-4 z-50 flex items-center gap-2"
+      className="fixed top-4 right-4 z-[9999] flex items-center gap-2 bg-white/90 backdrop-blur-sm hover:bg-white/95 transition-all duration-200"
     >
       <Globe className="h-4 w-4" />
       {i18n.language === 'ko' ? 'EN' : '한국어'}

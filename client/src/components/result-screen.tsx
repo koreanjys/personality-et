@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { User, Heart, X, Share, RotateCcw, Download } from "lucide-react";
+import { User, Heart, X, Share, RotateCcw, Download, BookOpen } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import type { ResultDescription } from "@/types";
 
@@ -25,6 +25,11 @@ export function ResultScreen({
 
   // 모바일 기기 감지
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+  // 성격유형 가이드 페이지로 이동
+  const goToPersonalityGuide = () => {
+    window.open('/personality-guide', '_blank');
+  };
 
   // 번역 키 생성 (현재 personalities 객체의 키 형식에 맞춤)
   const personalityKey = personalityType; // "ENFJ + 테토" 형식 그대로 사용
@@ -138,33 +143,48 @@ export function ResultScreen({
       {/* Action buttons */}
       <Card className="rounded-2xl shadow-lg">
         <CardContent className="p-8">
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              onClick={onShareResult}
-              className="bg-secondary hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-full transition-all duration-200"
-              data-testid="button-share-result"
-            >
-              <Share className="mr-2" />
-              {t('result.shareButton')}
-            </Button>
+          <div className="flex flex-col gap-4 justify-center">
+            {/* 첫 번째 줄: 공유, 다시하기 버튼 */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                onClick={onShareResult}
+                className="bg-secondary hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-full transition-all duration-200"
+                data-testid="button-share-result"
+              >
+                <Share className="mr-2" />
+                {t('result.shareButton')}
+              </Button>
+              
+              <Button 
+                onClick={onRestartTest}
+                className="bg-slate-500 hover:bg-slate-600 text-white font-semibold px-6 py-3 rounded-full transition-all duration-200"
+                data-testid="button-restart-test"
+              >
+                <RotateCcw className="mr-2" />
+                {isSharedResult ? t('common.startNewTest', '새 테스트 시작하기') : t('result.restartButton')}
+              </Button>
+            </div>
             
-            <Button 
-              onClick={onRestartTest}
-              className="bg-slate-500 hover:bg-slate-600 text-white font-semibold px-6 py-3 rounded-full transition-all duration-200"
-              data-testid="button-restart-test"
-            >
-              <RotateCcw className="mr-2" />
-              {isSharedResult ? t('common.startNewTest', '새 테스트 시작하기') : t('result.restartButton')}
-            </Button>
-            
-            <Button 
-              onClick={onDownloadResult}
-              className="bg-accent hover:bg-amber-600 text-white font-semibold px-6 py-3 rounded-full transition-all duration-200"
-              data-testid="button-download-result"
-            >
-              <Download className="mr-2" />
-              {isMobile ? t('result.downloadButtonMobile') : t('result.downloadButton')}
-            </Button>
+            {/* 두 번째 줄: 다운로드, 가이드 버튼 */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                onClick={onDownloadResult}
+                className="bg-accent hover:bg-amber-600 text-white font-semibold px-6 py-3 rounded-full transition-all duration-200"
+                data-testid="button-download-result"
+              >
+                <Download className="mr-2" />
+                {isMobile ? t('result.downloadButtonMobile') : t('result.downloadButton')}
+              </Button>
+              
+              <Button 
+                onClick={goToPersonalityGuide}
+                className="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold px-6 py-3 rounded-full transition-all duration-200"
+                data-testid="button-personality-guide"
+              >
+                <BookOpen className="mr-2" />
+                {t('result.personalityGuideButton')}
+              </Button>
+            </div>
           </div>
         </CardContent>
       </Card>

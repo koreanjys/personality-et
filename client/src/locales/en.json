@@ -54,6 +54,7 @@
     "downloadButton": "Save Result",
     "downloadButtonMobile": "Save to Photos",
     "restartButton": "Restart Test",
+    "personalityGuideButton": "View Personality Guide",
     "shareText": "My personality test result: {{type}}! Take the test yourself! #PersonalityTest #EgenTeto"
   },
   "personalities": {
