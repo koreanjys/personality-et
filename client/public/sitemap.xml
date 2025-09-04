@@ -5,7 +5,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://jybr.me/</loc>
-    <lastmod>2025-09-03</lastmod>
+    <lastmod>2025-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jybr.me/" />
@@ -15,7 +15,7 @@
   <!-- Policy Pages -->
   <url>
     <loc>https://jybr.me/privacy-policy</loc>
-    <lastmod>2025-09-03</lastmod>
+    <lastmod>2025-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jybr.me/privacy-policy" />
@@ -23,7 +23,7 @@
   </url>
   <url>
     <loc>https://jybr.me/terms-of-service</loc>
-    <lastmod>2025-09-03</lastmod>
+    <lastmod>2025-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jybr.me/terms-of-service" />
@@ -31,7 +31,7 @@
   </url>
   <url>
     <loc>https://jybr.me/personality-guide</loc>
-    <lastmod>2025-09-03</lastmod>
+    <lastmod>2025-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jybr.me/personality-guide" />
